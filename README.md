@@ -26,5 +26,5 @@ Django Boilerplate is an application that helps users easen their django project
 
 -   To rename the project:
 
-          $ python manage.py rename.py {project_name}
+          $ python manage.py rename new_project {your project_name}
           
