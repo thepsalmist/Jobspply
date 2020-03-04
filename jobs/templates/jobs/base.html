@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="author" content="Jobboard">
+    <title>JobBoard - Bootstrap HTML5 Job Portal Template</title>
+
+    <link rel="shortcut icon" href="{% static 'jobs/img/favicon.png">
+
+    <link rel="stylesheet" href="{% static 'jobs/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'jobs/css/jasny-bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'jobs/css/bootstrap-select.min.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'jobs/css/material-kit.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'jobs/css/color-switcher.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'jobs/extras/animate.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'jobs/extras/owl.carousel.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'jobs/extras/owl.theme.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'jobs/extras/settings.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'jobs/css/slicknav.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'jobs/css/main.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'jobs/css/responsive.css' %}" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'jobs/css/colors/green.css' %}" media="screen" />
+    <script src="https://kit.fontawesome.com/77a152ee1f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% include "jobs/header.html" %}
+
+    {% block content %}
+    {% endblock %}
+
+
+    {% include "jobs/footer.html" %}
+    <a href="#" class="back-to-top">
+        <i class="ti-arrow-up"></i>
+    </a>
+
+    <script type="text/javascript" src="{% static 'jobs/js/jquery-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/material.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/material-kit.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/jquery.parallax.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/jquery.slicknav.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/jquery.counterup.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/waypoints.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/jasny-bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/bootstrap-select.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/form-validator.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/contact-form-script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jobs/js/jquery.themepunch.tools.min.js' %}"></script>
+</body>
+
+</html>
