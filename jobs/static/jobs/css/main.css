@@ -42,7 +42,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: #ff4f57
+  color: #67900B
 }
 
 img {
@@ -73,12 +73,12 @@ a:hover, a:focus {
 }
 
 ::selection {
-  background: #ff4f57;
+  background: #67900B;
   color: #fff
 }
 
 ::-moz-selection {
-  background: #ff4f57;
+  background: #67900B;
   color: #fff
 }
 
@@ -105,7 +105,7 @@ a:hover, a:focus {
 }
 
 .btn-common {
-  background-color: #ff4f57;
+  background-color: #67900B;
   border: none;
   border-radius: 4px;
   text-transform: uppercase;
@@ -115,7 +115,7 @@ a:hover, a:focus {
 
 .btn-border {
   background: #fff;
-  color: #ff4f57;
+  color: #67900B;
   text-transform: uppercase;
   border-radius: 4px;
   overflow: hidden;
@@ -124,7 +124,7 @@ a:hover, a:focus {
 }
 
 .btn-border:hover {
-  color: #ff4f57;
+  color: #67900B;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .12), 0 1px 6px 0 rgba(0, 0, 0, .12)
 }
 
@@ -173,7 +173,7 @@ a:hover, a:focus {
   padding: 14px 22px;
   height: 55px;
   font-size: 22px;
-  background: #ff4f57;
+  background: #67900B;
   color: #fff;
   width: 65px;
   text-align: center
@@ -207,7 +207,7 @@ a:hover, a:focus {
   bottom: 0;
   margin-left: 0;
   margin-right: 0;
-  border-bottom: 2px solid #ff4f57
+  border-bottom: 2px solid #67900B
 }
 
 #content {
@@ -223,6 +223,7 @@ a:hover, a:focus {
 }
 
 .page-header {
+  background: url(../img/banner1.jpg);
   padding: 40px 0;
   margin: 0;
   border-top: 1px solid #999;
@@ -243,7 +244,7 @@ a:hover, a:focus {
 
 .breadcrumb {
   font-size: 14px;
-  color: #ff4f57;
+  color: #67900B;
   border-radius: 0;
   background: 0 0;
   padding: 5px 0;
@@ -255,7 +256,7 @@ a:hover, a:focus {
 }
 
 .breadcrumb a:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 #loading {
@@ -290,7 +291,7 @@ a:hover, a:focus {
 #loading .object {
   width: 20px;
   height: 20px;
-  background-color: #ff4f57;
+  background-color: #67900B;
   position: absolute;
   left: 65px;
   top: 65px;
@@ -497,12 +498,12 @@ a:hover, a:focus {
 }
 
 .navbar-default.affix .float-right li a {
-  color: #ff4f57 !important;
-  border: 1px solid #ff4f57
+  color: #67900B !important;
+  border: 1px solid #67900B
 }
 
 .navbar-default.affix .float-right li a:hover {
-  background: #ff4f57;
+  background: #67900B;
   color: #fff !important
 }
 
@@ -546,7 +547,7 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-nav>li>a {
-  color: #fff;
+  color: #000000;
   display: block;
   font-size: 15px;
   border-radius: 4px;
@@ -561,8 +562,8 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-nav>li:hover>a, .navbar-default .navbar-nav>li>a.active {
-  color: #fff;
-  background-color: #ff4f57
+  color: #000000;
+  background-color: #67900B
 }
 
 .navbar-default .navbar-nav .dropdown {
@@ -604,11 +605,11 @@ a:hover, a:focus {
 }
 
 .dropdown li a.active, .sup-dropdown li a.active {
-  color: #ff4f57
+  color: #67900B
 }
 
 .dropdown>li:hover>a, .sup-dropdown li:hover>a {
-  color: #ff4f57
+  color: #67900B
 }
 
 .dropdown li, .sup-dropdown li {
@@ -642,7 +643,7 @@ a:hover, a:focus {
   left: 100%;
   top: 0;
   border-radius: 2px;
-  border-bottom: 2px solid #ff4f57;
+  border-bottom: 2px solid #67900B;
   padding: 12px;
   width: 195px;
   background-color: #fff;
@@ -671,8 +672,8 @@ a:hover, a:focus {
 
 .float-right li a {
   font-size: 13px;
-  color: #fff !important;
-  background-color: rgba(255, 255, 255, .1);
+  color: #000000 !important;
+  background-color: #67900b;
   border: 1px solid rgba(255, 255, 255, .3);
   padding: 10px 15px;
   margin-right: 0;
@@ -697,8 +698,8 @@ a:hover, a:focus {
 }
 
 .main-navigation .float-right li a {
-  color: #ff4f57 !important;
-  border: 1px solid #ff4f57
+  color: #67900B !important;
+  border: 1px solid #67900B
 }
 
 .main-navigation .float-right li a:hover {
@@ -783,7 +784,7 @@ a:hover, a:focus {
   padding: 10px;
   cursor: pointer;
   position: fixed;
-  background: #ff4f57;
+  background: #67900B;
   z-index: 999;
   top: 124px;
   left: 0
@@ -816,7 +817,7 @@ a:hover, a:focus {
 
 .navmenu-default .navmenu-nav>li>a:hover, .navbar-default .navbar-offcanvas .navmenu-nav>li>a:hover, .navmenu-default .navmenu-nav>li>a:focus, .navbar-default .navbar-offcanvas .navmenu-nav>li>a:focus {
   color: #fff;
-  background-color: #ff4f57
+  background-color: #67900B
 }
 
 .nav>li {
@@ -832,11 +833,11 @@ a:hover, a:focus {
 }
 
 nav#menu span.fa.fa-bars:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .navmenu-default .navmenu-nav>.active>a, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a, .navmenu-default .navmenu-nav>.active>a:hover, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:hover, .navmenu-default .navmenu-nav>.active>a:focus, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:focus {
-  background: #ff4f57;
+  background: #67900B;
   color: #fff
 }
 
@@ -847,7 +848,7 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 .close i {
-  background: #ff4f57;
+  background: #67900B;
   color: #fff;
   padding: 8px;
   border-radius: 50px;
@@ -873,6 +874,8 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 .search-container {
+  /* background: url(../img/bg/rsz_bg_job_2.jpg) rgba(0, 0, 0, .3) center center no-repeat; */
+  background-size: cover;
   padding: 200px 0;
   display: inline-block;
   width: 100%;
@@ -891,7 +894,7 @@ nav#menu span.fa.fa-bars:hover {
 
 .search-container h2 {
   font-size: 30px;
-  color: #ff4f57;
+  color: #67900B;
   font-weight: 400;
   margin-bottom: 30px;
   letter-spacing: -1px
@@ -925,8 +928,8 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 .popular-jobs a:hover {
-  background: #ff4f57;
-  border-color: #ff4f57;
+  background: #67900B;
+  border-color: #67900B;
   color: #fff
 }
 
@@ -969,7 +972,7 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 #intro-bg {
-  background: url(../img/bg/rsz_bg_job_2.jpg) rgba(0, 0, 0, .3) center center no-repeat;
+  background: url(../img/bg/rsz_bg_job_2.jpg) rgba(0, 0, 0, .8) center center no-repeat;
   background-size: cover;
   color: #fff;
   position: relative;
@@ -983,7 +986,7 @@ nav#menu span.fa.fa-bars:hover {
   width: 100%;
   height: 100%;
   display: inline-block;
-  background-color: rgba(42, 46, 50, .7);
+  /* background-color: rgba(42, 46, 50, .6); */
   position: absolute
 }
 
@@ -1154,22 +1157,22 @@ label {
 .find-job .nav-tabs>li>a {
   padding: 10px 15px;
   font-size: 14px;
-  color: #ff4f57;
+  color: #67900B;
   text-transform: uppercase;
-  border: 1px solid #ff4f57 !important;
+  border: 1px solid #67900B !important;
   border-radius: 0;
   margin-right: 10px;
   font-weight: 700
 }
 
 .find-job .nav>li>a:focus, .find-job .nav>li>a:hover {
-  background-color: #ff4f57;
+  background-color: #67900B;
   color: #fff
 }
 
 .find-job .nav-tabs>li.active>a, .find-job .nav-tabs>li.active>a:focus, .find-job .nav-tabs>li.active>a:hover {
   border-radius: 0;
-  background: #ff4f57;
+  background: #67900B;
   color: #fff
 }
 
@@ -1230,7 +1233,7 @@ label {
 }
 
 .find-job .showing a span {
-  color: #ff4f57
+  color: #67900B
 }
 
 .find-job .pagination>li>a, .find-job .pagination>li>span {
@@ -1244,7 +1247,7 @@ label {
 }
 
 .category {
-  background: #ff4f57
+  background: #67900B
 }
 
 .category .section-title {
@@ -1298,7 +1301,7 @@ label {
 .f-category .icon i {
   font-size: 40px;
   padding: 20px;
-  color: #ff4f57;
+  color: #67900B;
   transform: scale(1);
   -moz-transform: scale(1);
   -webkit-transform: scale(1);
@@ -1325,7 +1328,7 @@ label {
 }
 
 .f-category h3 a:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .f-category p {
@@ -1392,7 +1395,7 @@ label {
 }
 
 .featured-jobs .item-body .job-title a:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .featured-jobs .item-body .adderess {
@@ -1416,7 +1419,7 @@ label {
 }
 
 .featured-jobs .item-foot a:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .featured-jobs .item-foot span {
@@ -1440,7 +1443,7 @@ label {
 .featured-jobs .item-foot .view-iocn a {
   width: 48px;
   display: block;
-  background: #ff4f57;
+  background: #67900B;
   color: #fff;
   font-size: 20px;
   height: 48px;
@@ -1615,7 +1618,7 @@ label {
   height: 40px;
   line-height: 30px;
   display: block !important;
-  background: #ff4f57 !important;
+  background: #67900B !important;
   text-align: center;
   display: inline-block;
   opacity: 1 !important;
@@ -1664,7 +1667,7 @@ label {
 }
 
 .counting .icon i {
-  color: #ff4f57;
+  color: #67900B;
   font-size: 42px
 }
 
@@ -1677,7 +1680,7 @@ label {
 }
 
 .counting .desc h2:after {
-  background: #ff4f57;
+  background: #67900B;
   bottom: 0;
   content: "";
   height: 2px;
@@ -1694,7 +1697,7 @@ label {
 }
 
 .counting:hover span {
-  background: #ff4f57;
+  background: #67900B;
   -webkit-transform: scale(1.1, 1.1);
   -moz-transform: scale(1.1, 1.1);
   -ms-transform: scale(1.1, 1.1);
@@ -1703,7 +1706,7 @@ label {
 }
 
 .infobox {
-  background: #ff4f57
+  background: #67900B
 }
 
 .infobox .info-text {
@@ -1772,7 +1775,7 @@ footer .menu li a {
 }
 
 footer .menu li a:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .subscribe-box {
@@ -1797,7 +1800,7 @@ footer .menu li a:hover {
   text-decoration: none;
   color: #fff;
   font-size: 12px;
-  background: #ff4f57;
+  background: #67900B;
   text-transform: uppercase;
   border: none;
   padding: 7px 16px;
@@ -1819,7 +1822,7 @@ footer .menu li a:hover {
   line-height: 44px;
   margin-right: 5px;
   border-radius: 50px;
-  background: #ff4f57;
+  background: #67900B;
   display: inline-block;
   height: 42px;
   position: relative;
@@ -1842,7 +1845,7 @@ footer .menu li a:hover {
 }
 
 #copyright p a:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .social-icon .facebook:hover {
@@ -1891,7 +1894,7 @@ footer {
 .widget-title:before {
   content: "";
   position: absolute;
-  border-bottom: 3px solid #ff4f57;
+  border-bottom: 3px solid #67900B;
   width: 50px;
   bottom: -1px;
   left: 0
@@ -1901,7 +1904,7 @@ footer {
   display: inline-block;
   margin-right: 15px;
   font-size: 16px;
-  color: #ff4f57
+  color: #67900B
 }
 
 .widget-title h4 {
@@ -1930,7 +1933,7 @@ footer {
 }
 
 .categories-list ul li a:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .categories-list ul li a i {
@@ -1970,7 +1973,7 @@ footer {
 }
 
 .all-categories ul li a:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .pagination-bar {
@@ -1994,13 +1997,13 @@ footer {
 }
 
 .pagination .active>a, .pagination .active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-  background-color: #ff4f57 !important;
-  border-color: #ff4f57 !important
+  background-color: #67900B !important;
+  border-color: #67900B !important
 }
 
 .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
-  background: #ff4f57;
-  border-color: #ff4f57;
+  background: #67900B;
+  border-color: #67900B;
   color: #fff
 }
 
@@ -2051,7 +2054,7 @@ footer {
 .service-item .icon-wrapper i {
   display: block;
   margin: 0 auto;
-  color: #ff4f57
+  color: #67900B
 }
 
 .service-item h2 {
@@ -2161,7 +2164,7 @@ footer {
 }
 
 .job-detail .text-left .meta span i {
-  color: #ff4f57;
+  color: #67900B;
   margin-right: 3px
 }
 
@@ -2175,7 +2178,7 @@ footer {
 .job-detail .text-left .price i {
   font-size: 15px;
   margin-right: 10px;
-  color: #ff4f57
+  color: #67900B
 }
 
 .job-detail .text-left .btn {
@@ -2211,7 +2214,7 @@ footer {
   left: 0;
   top: 4px;
   margin-right: 5px;
-  color: #ff4f57
+  color: #67900B
 }
 
 .job-detail .sidebar .thumb {
@@ -2226,7 +2229,7 @@ footer {
 }
 
 .job-detail .sidebar .text-box h4 a {
-  color: #ff4f57
+  color: #67900B
 }
 
 .job-detail .sidebar .text-box p {
@@ -2242,7 +2245,7 @@ footer {
 
 .job-detail .sidebar .text-box a.text i {
   margin-right: 5px;
-  color: #ff4f57
+  color: #67900B
 }
 
 .job-detail .sidebar .text-box strong.price {
@@ -2254,7 +2257,7 @@ footer {
 
 .job-detail .sidebar .text-box strong.price i {
   margin-right: 5px;
-  color: #ff4f57
+  color: #67900B
 }
 
 .job-detail .sidebar .sidebar-jobs ul li {
@@ -2280,7 +2283,7 @@ footer {
 
 .job-detail .sidebar .sidebar-jobs ul li span i {
   margin-right: 5px;
-  color: #ff4f57
+  color: #67900B
 }
 
 .detail-company {
@@ -2427,7 +2430,7 @@ footer {
 }
 
 .job-list .job-tag .meta-tag span a:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .job-list .job-tag .meta-tag span i {
@@ -2444,7 +2447,7 @@ footer {
   text-align: center;
   margin-right: 18px;
   background: #f1f1f1;
-  color: #ff4f57;
+  color: #67900B;
   font-size: 16px
 }
 
@@ -2470,18 +2473,18 @@ footer {
 }
 
 .right-sideabr .lest li a:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .right-sideabr .lest li a.active {
-  color: #ff4f57
+  color: #67900B
 }
 
 .right-sideabr .lest .notinumber {
   float: right;
   width: 24px;
   height: 24px;
-  background: #ff4f57;
+  background: #67900B;
   text-align: center;
   border-radius: 50px;
   color: #fff
@@ -2623,7 +2626,7 @@ footer {
 }
 
 .post-header a {
-  color: #ff4f57
+  color: #67900B
 }
 
 .add-post-btn {
@@ -2749,7 +2752,7 @@ footer {
 }
 
 .manager-resumes-item .btn-gray:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .manager-resumes-item .btn-danger {
@@ -2937,7 +2940,7 @@ fieldset p {
 
 #pricing-table .table .pricing-header .price-value {
   font-size: 52px;
-  color: #ff4f57;
+  color: #67900B;
   position: relative;
   text-align: center;
   font-weight: 700;
@@ -2977,7 +2980,7 @@ fieldset p {
 }
 
 #pricing-table .table:hover .pricing-header {
-  background: #ff4f57
+  background: #67900B
 }
 
 #pricing-table .table:hover .pricing-header .price-value {
@@ -2995,7 +2998,7 @@ fieldset p {
 }
 
 #pricing-table #active-tb .pricing-header {
-  background: #ff4f57
+  background: #67900B
 }
 
 #pricing-table #active-tb .pricing-header .price-value {
@@ -3044,7 +3047,7 @@ fieldset p {
 }
 
 .user-panel-sidebar ul li a:hover, .user-panel-sidebar ul li a:active, .user-panel-sidebar ul li.active a {
-  background-color: #ff4f57;
+  background-color: #67900B;
   color: #fff
 }
 
@@ -3098,7 +3101,7 @@ table.add-manage-table>tbody>tr>td, table.add-manage-table>tbody>tr>th {
 
 .table>thead>tr>th {
   border-bottom: none;
-  color: #ff4f57
+  color: #67900B
 }
 
 .ads-details-td h4 {
@@ -3189,7 +3192,7 @@ table.add-manage-table>tbody>tr>td, table.add-manage-table>tbody>tr>th {
   font-size: 14px;
   text-align: center;
   border-radius: 50px;
-  background-color: #ff4f57;
+  background-color: #67900B;
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
   -o-transition: all .2s linear;
@@ -3274,7 +3277,7 @@ table.add-manage-table>tbody>tr>td, table.add-manage-table>tbody>tr>th {
 }
 
 .blog-post .post-content .meta .meta-part a:hover {
-  color: #ff4f57
+  color: #67900B
 }
 
 .blog-post .post-content .meta .meta-part i {
@@ -3447,7 +3450,7 @@ table.add-manage-table>tbody>tr>td, table.add-manage-table>tbody>tr>th {
   font-size: 12px;
   color: #fff;
   padding: 7px 12px;
-  background: #ff4f57;
+  background: #67900B;
   margin: 4px 2px;
   border-radius: 50px;
   transition: all .4s ease-in-out;
@@ -3467,7 +3470,7 @@ table.add-manage-table>tbody>tr>td, table.add-manage-table>tbody>tr>th {
 blockquote {
   border-left: none;
   padding: 30px;
-  background: #ff4f57
+  background: #67900B
 }
 
 blockquote .quote-text {
@@ -3539,7 +3542,7 @@ blockquote p a:hover {
 }
 
 .reply-link {
-  color: #ff4f57;
+  color: #67900B;
   border-radius: 0;
   font-size: 14px;
   -webkit-transition: all .4s ease;
@@ -3611,8 +3614,8 @@ blockquote p a:hover {
   padding: 0 30px;
   outline: none;
   border-radius: 0;
-  background: #ff4f57 !important;
-  border: 1px solid #ff4f57;
+  background: #67900B !important;
+  border: 1px solid #67900B;
   width: 100%;
   box-shadow: none
 }
@@ -3788,7 +3791,7 @@ blockquote p a:hover {
   font-size: 16px;
   height: 50px;
   line-height: 50px;
-  background: #ff4f57;
+  background: #67900B;
   color: #fff
 }
 
@@ -3961,7 +3964,7 @@ blockquote p a:hover {
 }
 
 .dropdown-menu li a:hover, .dropdown-menu li a:focus, .dropdown-menu li a:active {
-  background-color: #ff4f57;
+  background-color: #67900B;
   color: #fff;
   border-radius: 0
 }

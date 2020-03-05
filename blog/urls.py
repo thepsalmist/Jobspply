@@ -5,6 +5,6 @@ from .views import post_list
 app_name = "blog"
 
 urlpatterns = [
-    path("", views.blog_list, name="blog"),
+    path("", views.post_list, name="blog"),
 ]
 
