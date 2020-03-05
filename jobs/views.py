@@ -3,4 +3,6 @@ from .models import Job
 
 
 def home(request):
-    return render(request, "jobs/index.html", context={})
+    jobs = Job.objects.all()
+    context = {"jobs": jobs}
+    return render(request, "jobs/index.html", context)
