@@ -1984,7 +1984,6 @@ footer {
 .pagination {
   margin: 0;
   width: 100%;
-  padding-left: 20px;
   text-align: center
 }
 
@@ -1996,7 +1995,10 @@ footer {
   border: 1px solid #eee;
   border-radius: 0
 }
-
+.pagination>li>a.active, .pagination>li>a.active:focus, .pagination>li>a.active:hover{
+  color: #fff;
+  background: #67900B;
+}
 .pagination .active>a, .pagination .active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
   background-color: #67900B !important;
   border-color: #67900B !important

@@ -34,19 +34,26 @@
                 </div>
                 {% endfor %}
                 <div class="container">
-                    <div class="showing pull-left">
-                        <a href="#">Showing <span>6-10</span> Of 24 Jobs</a>
-                    </div>
                     <ul class="pagination">
-                        <li class="active"><a href="#" class="btn btn-common"><i class="ti-angle-left"></i> prev</a>
+                        {% if jobs.has_previous %}
+                        <li class="active"><a href="?page={{jobs.previous_page_number}}" class="btn btn-common"><i
+                                    class="ti-angle-left"></i> prev</a>
                         </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li class="active"><a href="#" class="btn btn-common">Next <i class="ti-angle-right"></i></a>
+                        {% endif %}
+
+                        {% for num in jobs.paginator.page_range %}
+                        {% if jobs.number == num %}
+                        <li><a href="#" class="active">{{num}}</a></li>
+                        {% elif num > jobs.number|add:'-2' and num < jobs.number|add:'2'%}
+                        <li><a href="?page={{num}}">{{num}}</a></li>
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if jobs.has_next %}
+                        <li class="active"><a href="?page={{jobs.next_page_number}}" class="btn btn-common">Next <i
+                                    class="ti-angle-right"></i></a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -57,9 +64,9 @@
                         <div class="inner-box">
                             <h3>Categories</h3>
                             <ul class="cat-list">
-                                {% for cat in categories %}
+                                {% for ads in advertising  %}
                                 <li>
-                                    <a href="#">{{cat}}<span class="num-posts"></span></a>
+                                    <a href="#">{{ads.title}}<span class="num-posts"></span></a>
                                 </li>
                                 {% endfor %}
                                 <!-- <li>
