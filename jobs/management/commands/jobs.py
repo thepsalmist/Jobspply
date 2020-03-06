@@ -31,6 +31,9 @@ class Command(BaseCommand):
                 job_category = job_list.find("li", class_="job-item").a.text
                 job_category = job_category.split("/")[0]
                 job_link = base_url + job_link
+                job_thumbnail = str(job_list.find("li", class_="job-logo").img["src"])
+                job_thumbnail = "%20".join(job_thumbnail.split())
+                job_thumbnail = base_url + job_thumbnail
 
                 if job_link is not None:
                     source = requests.get(job_link).text
@@ -42,6 +45,7 @@ class Command(BaseCommand):
                 job_description = None
                 job_link = None
                 job_category = None
+                job_thumbnail = None
 
             # save to csv
             csv_writer.writerow(
@@ -57,6 +61,9 @@ class Command(BaseCommand):
                     job.title = job_title
                     job.description = job_description
                     job.job_url = job_link
+                    job.category = job_category
+                    job.thumbnail = job_thumbnail
+                    job.body = job_detail
 
                     job.save()
                     print("%s added" % (job_title,))

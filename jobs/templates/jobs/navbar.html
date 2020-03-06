@@ -17,30 +17,30 @@
 
                         <ul class="nav navbar-nav">
                             <li>
-                                <a class="active" href="index-2.html">
-                                    Home <i class="fa fa-angle-down"></i>
+                                <a class="active" href="{% url 'jobs:home' %}">
+                                    Home
                                 </a>
                             </li>
                             <li>
-                                <a href="about.html">
-                                    Pages <i class="fa fa-angle-down"></i>
+                                <a href="{% url 'jobs:home' %}">
+                                    Pages
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Candidates <i class="fa fa-angle-down"></i>
+                                    Candidates
                                 </a>
 
                             </li>
                             <li>
                                 <a href="#">
-                                    Employers <i class="fa fa-angle-down"></i>
+                                    Employers
                                 </a>
 
                             </li>
                             <li>
-                                <a href="blog.html">
-                                    Blog <i class="fa fa-angle-down"></i>
+                                <a href="{% url 'blog:blog' %}">
+                                    Blog
                                 </a>
 
                             </li>
@@ -54,7 +54,7 @@
 
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a class="active" href="index-2.html">Home</a>
+                        <a class="active" href="{% url 'jobs:home' %}">Home</a>
                     </li>
                     <li>
                         <a href="about.html">Pages</a>
@@ -68,7 +68,7 @@
 
                     </li>
                     <li>
-                        <a href="blog.html">Blog</a>
+                        <a href="{% url 'blog:blog' %}">Blog</a>
 
                     </li>
                     <li class="btn-m"><a href="post-job.html"><i class="ti-pencil-alt"></i> Post A Job</a></li>

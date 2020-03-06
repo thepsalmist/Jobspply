@@ -96,7 +96,7 @@ a:hover, a:focus {
 
 .btn-common:hover, .btn-common:focus {
   color: #fff;
-  background: #ea4249;
+  background: #000000;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .12), 0 1px 6px 0 rgba(0, 0, 0, .12)
 }
 
@@ -1984,6 +1984,7 @@ footer {
 .pagination {
   margin: 0;
   width: 100%;
+  padding-left: 20px;
   text-align: center
 }
 
@@ -2386,7 +2387,7 @@ footer {
 .job-list {
   border: 1px solid #f1f1f1;
   padding: 25px;
-  /* display: inline-block; */
+  display: inline-block;
   margin-bottom: 15px
 }
 
