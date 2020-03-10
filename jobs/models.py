@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
+from tinymce import HTMLField
 from django.db.models.signals import pre_save
 from jobspply.utils import slug_generator
 
@@ -9,14 +10,14 @@ class Job(models.Model):
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=200, blank=True)
     description = models.TextField()
-    body = models.TextField()
+    body = HTMLField()
     category = models.CharField(max_length=100)
     job_url = models.URLField()
     thumbnail = models.URLField(null=True, blank=True)
     publish = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        ordering = ("publish",)
+        ordering = ("-publish",)
 
     def __str__(self):
         return self.title

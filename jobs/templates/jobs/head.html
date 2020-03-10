@@ -1,3 +1,4 @@
+{% load static %}
 <section id="">
     <div class="header">
         <div class="logo-menu">
@@ -11,74 +12,69 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand logo" href="index-2.html"><img src="assets/img/logo.png" alt=""></a>
+                        <a class="navbar-brand logo" href="{% url 'jobs:home' %}"><img
+                                src="{% static 'jobs/img/lala.png' %}" alt=""></a>
                     </div>
                     <div class="collapse navbar-collapse" id="navbar">
 
                         <ul class="nav navbar-nav">
-                            <li>
+                            <li class="extra">
                                 <a class="active" href="{% url 'jobs:home' %}">
                                     Home
                                 </a>
                             </li>
-                            <li>
-                                <a href="about.html">
+                            <li class="extra">
+                                <a href="">
                                     Categories
                                 </a>
                                 <ul class="dropdown">
                                     <li>
-                                        <a href="category/advertising">
+                                        <a href="{%url 'jobs:jobs_by_category' query='advertising' %}">
                                             Advertising
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="category/aviation">
+                                        <a href="{%url 'jobs:jobs_by_category' query='aviation' %}">
                                             Aviation
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="catehory/banking">
+                                        <a href="{%url 'jobs:jobs_by_category' query='banking' %}">
                                             Banking
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="category/education">
+                                        <a href="{%url 'jobs:jobs_by_category' query='education' %}">
                                             Education
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="category/engineering">
+                                        <a href="{%url 'jobs:jobs_by_category' query='engineering' %}">
                                             Engineering
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="category/government">
+                                        <a href="{%url 'jobs:jobs_by_category' query='government' %}">
                                             Government
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#">
-                                    Candidates
-                                </a>
-
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Employers
-                                </a>
-
-                            </li>
-                            <li>
+                            <li class="extra">
                                 <a href="{% url 'blog:blog' %}">
-                                    Blog
+                                    CV Services
+                                </a>
+
+                            </li>
+                            <li class="extra">
+                                <a href="{% url 'blog:blog' %}">
+                                    Career Blog
                                 </a>
 
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right float-right">
-                            <li class="left"><a href="post-job.html"><i class="ti-pencil-alt"></i> Post A Job</a></li>
+                            <li class="left"><a href="post-job.html"><i class="ti-pencil-alt"></i> Sign Up</a></li>
                             <li class="right"><a href="my-account.html"><i class="ti-lock"></i> Log In</a></li>
                         </ul>
                     </div>
@@ -89,53 +85,51 @@
                         <a class="active" href="{% url 'jobs:home' %}">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">Categories</a>
+                        <a href="">Categories</a>
                         <ul>
                             <li>
-                                <a class="active" href="index-2.html">
+                                <a class="active" href="{%url 'jobs:jobs_by_category' query='advertising' %}">
                                     Advertising
                                 </a>
                             </li>
                             <li>
-                                <a href="index-02.html">
+                                <a href="{%url 'jobs:jobs_by_category' query='aviation' %}">
                                     Aviation
                                 </a>
                             </li>
                             <li>
-                                <a href="index-03.html">
+                                <a href="{%url 'jobs:jobs_by_category' query='banking' %}">
                                     Banking
                                 </a>
                             </li>
                             <li>
-                                <a href="index-04.html">
+                                <a href="{%url 'jobs:jobs_by_category' query='education' %}">
                                     Education
                                 </a>
                             </li>
                             <li>
-                                <a href="index-04.html">
+                                <a href="{%url 'jobs:jobs_by_category' query='engineering' %}">
                                     Engineering
                                 </a>
                             </li>
                             <li>
-                                <a href="index-04.html">
+                                <a href="{%url 'jobs:jobs_by_category' query='government' %}">
                                     Government
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">For Candidates</a>
+                        <a href="{% url 'blog:blog' %}">
+                            CV Services
+                        </a>
 
                     </li>
                     <li>
-                        <a href="#">For Employers</a>
+                        <a href="{% url 'blog:blog' %}">Career Blog</a>
 
                     </li>
-                    <li>
-                        <a href="{% url 'blog:blog' %}">Blog</a>
-
-                    </li>
-                    <li class="btn-m"><a href="post-job.html"><i class="ti-pencil-alt"></i> Post A Job</a></li>
+                    <li class="btn-m"><a href="post-job.html"><i class="ti-pencil-alt"></i> Sign Up</a></li>
                     <li class="btn-m"><a href="my-account.html"><i class="ti-lock"></i> Log In</a></li>
                 </ul>
 

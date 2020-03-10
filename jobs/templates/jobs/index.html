@@ -24,6 +24,7 @@
                                     <span><a href="browse-categories.html">
                                             <i class="fas fa-paint-brush"></i>{{job.category}}</a></span>
                                     <span><i class="fas fa-map-marker-alt"></i>Nairobi, Kenya</span>
+                                    <span><i class="fas fa-calendar-day"></i>{{job.publish|date:"M/d/Y"}}</span>
                                 </div>
                             </div>
                             <div class="pull-right">
@@ -64,9 +65,9 @@
                         <div class="inner-box">
                             <h3>Categories</h3>
                             <ul class="cat-list">
-                                {% for ads in advertising  %}
+                                {% for cat in jobs.categories.all  %}
                                 <li>
-                                    <a href="#">{{ads.title}}<span class="num-posts"></span></a>
+                                    <a href="#">{{cat}}<span class="num-posts"></span></a>
                                 </li>
                                 {% endfor %}
                                 <!-- <li>
@@ -144,7 +145,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="category/advertising">
+                    <a href="{%url 'jobs:jobs_by_category' query='advertising' %}">
                         <div class=" icon">
                             <i class="ti-home"></i>
                         </div>
@@ -153,7 +154,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="category/sales">
+                    <a href="{%url 'jobs:jobs_by_category' query='sales' %}">
                         <div class="icon">
                             <i class="ti-world"></i>
                         </div>
@@ -162,7 +163,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="category/education">
+                    <a href="{%url 'jobs:jobs_by_category' query='education' %}">
                         <div class="icon">
                             <i class="ti-book"></i>
                         </div>
@@ -171,7 +172,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="category/engineering">
+                    <a href="{%url 'jobs:jobs_by_category' query='engineering' %}">
                         <div class="icon">
                             <i class="ti-desktop"></i>
                         </div>
@@ -180,7 +181,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="category/banking">
+                    <a href="{%url 'jobs:jobs_by_category' query='banking' %}">
                         <div class="icon">
                             <i class="ti-brush"></i>
                         </div>
@@ -189,7 +190,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="category/government">
+                    <a href="{%url 'jobs:jobs_by_category' query='government' %}">
                         <div class="icon">
                             <i class="ti-heart"></i>
                         </div>
@@ -198,7 +199,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="category/manufacturing">
+                    <a href="{%url 'jobs:jobs_by_category' query='manufacturing' %}">
                         <div class="icon">
                             <i class="ti-filter"></i>
                         </div>
@@ -207,7 +208,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="category/ngo">
+                    <a href="{%url 'jobs:jobs_by_category' query='ngo' %}">
                         <div class="icon">
                             <i class="ti-cup"></i>
                         </div>

@@ -2,25 +2,29 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <h1>Find the latest jobs in Kenya</h1><br>
+                <h2>More than <strong>1,000</strong> jobs are waiting to Kickstart your career!</h2>
                 <div class="content">
-                    <form method="">
+                    <form method="GET" action="{% url 'jobs:job_search' %}">
+                        {% csrf_token %}
                         <div class="row">
-                            <div class="col-md-4 col-sm-6">
+                            <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text"
+                                    <input class="form-control" type="text" name="q" value="{{request.GET.q}}"
                                         placeholder="job title / keywords / company name">
                                     <i class="far fa-clock"></i>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6">
+                            <!-- <div class="col-md-4 col-sm-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="email" placeholder="city / province / zip code">
+                                    <input class="form-control" type="email" name=""
+                                        placeholder="city / province / zip code">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
+                            </div> -->
+                            <div class="col-md-5 col-sm-6">
                                 <div class="search-category-container">
-                                    <label class="styled-select">
+                                    <label class="styled-select" name="categories">
                                         <select class="dropdown-product selectpicker">
                                             <option>All Categories</option>
                                             <option>Finance</option>
@@ -36,11 +40,16 @@
                                 </div>
                             </div>
                             <div class="col-md-1 col-sm-6">
-                                <button type="button" class="btn btn-search-icon">
-                                    <i class="fas fa-search"></i>
+                                <button type="submit" class="btn btn-search-icon"><i class="fas fa-search"></i></button>
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="popular-jobs">
+                    <b>Popular Keywords: </b>
+                    <a href="#">Web Design</a>
+                    <a href="#">Manager</a>
+                    <a href="#">Programming</a>
                 </div>
             </div>
         </div>

@@ -547,7 +547,7 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-nav>li>a {
-  color: #000000;
+  color: #fff;
   display: block;
   font-size: 15px;
   border-radius: 4px;
@@ -562,8 +562,13 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-nav>li:hover>a, .navbar-default .navbar-nav>li>a.active {
-  color: #000000;
+  color: #fff;
   background-color: #67900B
+}
+
+.navbar-default .navbar-nav .extra>a {
+  color: #000000;
+  
 }
 
 .navbar-default .navbar-nav .dropdown {
@@ -874,12 +879,11 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 .search-container {
-  /* background: url(../img/bg/rsz_bg_job_2.jpg) rgba(0, 0, 0, .3) center center no-repeat; */
   background-size: cover;
-  padding: 200px 0;
+  padding: 50px 0;
   display: inline-block;
   width: 100%;
-  height: 200px;
+  height: auto;
   position: relative
 }
 
@@ -895,7 +899,7 @@ nav#menu span.fa.fa-bars:hover {
 .search-container h2 {
   font-size: 30px;
   color: #67900B;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 30px;
   letter-spacing: -1px
 }
@@ -972,7 +976,8 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 #intro-bg {
-  background: url(../img/bg/rsz_bg_job_2.jpg) rgba(0, 0, 0, .8) center center no-repeat;
+  /* background: url(../img/bg/office.jpg) rgba(0, 0, 0, .8) center center no-repeat; */
+  background-color: #000000;
   background-size: cover;
   color: #fff;
   position: relative;
@@ -1040,11 +1045,11 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 .styled-select:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   content: "\f0b1";
   float: left;
   position: absolute;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
   color: #666;
   left: 2px;
   padding: 13px;

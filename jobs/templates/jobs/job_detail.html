@@ -53,7 +53,7 @@
                     <div class="clearfix">
                         <div class="box">
                             <h4>Job Description</h4>
-                            <p>{{job.description}}</p>
+                            <p>{{job.body|safe}}</p>
                             <a href="{{job.job_url}}" class="btn btn-common">Apply for this Job Now</a>
                         </div>
                     </div>

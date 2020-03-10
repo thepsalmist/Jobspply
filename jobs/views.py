@@ -12,7 +12,6 @@ def get_category_count():
 def home(request):
     jobs = Job.objects.all()
     category_count = get_category_count()
-    advertising = Job.objects.filter(category="Education")
     paginator = Paginator(jobs, 8)
     page = request.GET.get("page")
     try:
@@ -26,7 +25,6 @@ def home(request):
         "jobs": jobs,
         "category_count": category_count,
         "page": page,
-        "advertising": advertising,
     }
     return render(request, "jobs/index.html", context)
 
@@ -43,8 +41,43 @@ def jobs_by_category(request, query=None):
         lookup = Q(category__icontains=query)
         queryset = jobs.filter(lookup).all()
 
+        # paginator = Paginator(jobs, 6)
+        # page = request.GET.get("page")
+        # try:
+        #     queryset = paginator.page(page)
+        # except PageNotAnInteger:
+        #     queryset = paginator.page(1)
+        # except EmptyPage:
+        #     queryset = paginator.page(paginator.num_pages)
+
     context = {
         "jobs": jobs,
         "queryset": queryset,
     }
     return render(request, "jobs/category.html", context)
+
+
+def job_search(request):
+    queryset = Job.objects.all()
+    query = request.GET.get("q")
+    print(query)
+    if query != "" and query is not None:
+        queryset = queryset.filter(
+            Q(title__icontains=query) | Q(description__icontains=query)
+        )
+
+    paginator = Paginator(queryset, 6)
+    page = request.GET.get("page")
+    try:
+        queryset = paginator.page(page)
+    except PageNotAnInteger:
+        queryset = paginator.page(1)
+    except EmptyPage:
+        queryset = paginator.page(paginator.num_pages)
+
+    context = {
+        "queryset": queryset,
+        "query": query,
+    }
+    return render(request, "jobs/search.html", context)
+
