@@ -7,6 +7,9 @@ class Profile(models.Model):
     profile_pic = models.ImageField(
         default="default.jpg", blank=True, null=True, upload_to="Profiles"
     )
+    bio = models.TextField(blank=True, null=True)
+    work = models.TextField(blank=True, null=True)
+    education = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f"{self.user.username} Profile"
