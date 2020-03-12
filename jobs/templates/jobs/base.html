@@ -35,13 +35,29 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% if messages%}
+                {% for message in messages%}
+                <div class="alert alert-{{message.tags}}">
+                    {{message}}
+                </div>
+                {% endfor%}
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
     {% block content %}
+
     {% endblock %}
 
 
     {% include "jobs/footer.html" %}
     <a href="#" class="back-to-top">
-        <i class="ti-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </a>
 
     <script type="text/javascript" src="{% static 'jobs/js/jquery-min.js' %}"></script>

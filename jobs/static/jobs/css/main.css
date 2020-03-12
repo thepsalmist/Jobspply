@@ -1044,17 +1044,17 @@ nav#menu span.fa.fa-bars:hover {
   background: #fff
 }
 
-.styled-select:before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f0b1";
+/* .styled-select::before {
+  content: '\f107';
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900; 
   float: left;
   position: absolute;
   color: #666;
   left: 2px;
   padding: 13px;
   z-index: 999
-}
+} */
 
 .styled-select>select {
   background: 0 0;
@@ -3796,7 +3796,8 @@ blockquote p a:hover {
 .my-account-form .cd-switcher a {
   display: block;
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
+  text-align: center;
   height: 50px;
   line-height: 50px;
   background: #67900B;

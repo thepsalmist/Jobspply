@@ -1,17 +1,23 @@
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Count, Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from collections import Counter
 from .models import Job
 
 
-def get_category_count():
-    queryset = Job.objects.values("category").annotate(Count("category"))
-    return queryset
+def get_category():
+    categories = []
+    jobs = Job.objects.all()
+    for job in jobs:
+        categories.append(job.category)
+        categories = list(set(categories))
+
+    return categories
 
 
 def home(request):
     jobs = Job.objects.all()
-    category_count = get_category_count()
+    category = get_category()
     paginator = Paginator(jobs, 8)
     page = request.GET.get("page")
     try:
@@ -23,7 +29,7 @@ def home(request):
 
     context = {
         "jobs": jobs,
-        "category_count": category_count,
+        "category": category,
         "page": page,
     }
     return render(request, "jobs/index.html", context)

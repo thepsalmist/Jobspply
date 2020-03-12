@@ -74,8 +74,16 @@
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right float-right">
-                            <li class="left"><a href="post-job.html"><i class="ti-pencil-alt"></i> Sign Up</a></li>
-                            <li class="right"><a href="my-account.html"><i class="ti-lock"></i> Log In</a></li>
+                            {% if user.is_authenticated %}
+                            <li class="left"><a href="{% url 'profile' %}"><i class="ti-pencil-alt"></i> My Profile</a>
+                            </li>
+                            <li class="left"><a href="{% url 'logout' %}"><i class="ti-pencil-alt"></i> Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="left"><a href="{% url 'register' %}"><i class="ti-pencil-alt"></i> Sign Up</a>
+                            </li>
+                            <li class="right"><a href="{% url 'login' %}"><i class="ti-lock"></i> Log In</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -123,8 +131,16 @@
                         <a href="{% url 'blog:blog' %}">Career Blog</a>
 
                     </li>
-                    <li class="btn-m"><a href="post-job.html"><i class="ti-pencil-alt"></i> Sign Up</a></li>
-                    <li class="btn-m"><a href="my-account.html"><i class="ti-lock"></i> Log In</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="left"><a href="{% url 'profile' %}"><i class="ti-pencil-alt"></i> My Profile</a>
+                    </li>
+                    <li class="left"><a href="{% url 'logout' %}"><i class="ti-pencil-alt"></i> Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="left"><a href="{% url 'register' %}"><i class="ti-pencil-alt"></i> Sign Up</a>
+                    </li>
+                    <li class="right"><a href="{% url 'login' %}"><i class="ti-lock"></i> Log In</a></li>
+                    {% endif %}
                 </ul>
 
             </nav>

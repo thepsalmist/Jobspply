@@ -65,47 +65,35 @@
                         <div class="inner-box">
                             <h3>Categories</h3>
                             <ul class="cat-list">
-                                {% for cat in jobs.categories.all  %}
+                                {% for cat in category %}
                                 <li>
-                                    <a href="#">{{cat}}<span class="num-posts"></span></a>
+                                    <a href="{%url 'jobs:jobs_by_category' query=cat %}">{{cat}}<span
+                                            class="num-posts"></span></span></a>
+
                                 </li>
                                 {% endfor %}
                                 <!-- <li>
                                     <a href="#">Techonologies <span class="num-posts">4,256 Jobs</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Art/Design<span class="num-posts">3,245 Jobs</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Science <span class="num-posts">4,256 Jobs</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Education Training <span class="num-posts">4,560 Jobs</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Logistics <span class="num-posts">3,256 Jobs</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Food Services <span class="num-posts">1,256 Jobs</span></a>
                                 </li> -->
                             </ul>
                         </div>
                         <div class="inner-box">
-                            <h3>Job Status</h3>
-                            <ul class="cat-list">
-                                <li>
-                                    <a href="#">Full Time <span class="num-posts">12,256 Jobs</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Part Time <span class="num-posts">6,510 Jobs</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Freelancer <span class="num-posts">1,171 Jobs</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Internship <span class="num-posts">876 Jobs</span></a>
-                                </li>
-                            </ul>
+                            <h3 class="block-title">Join the Community</h3>
+                            <div class="bottom-social-icons social-icon">
+                                <a class="twitter" href="https://twitter.com/GrayGrids"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="facebook" href="https://web.facebook.com/GrayGrids"><i
+                                        class="fab fa-facebook"></i></a>
+                                <a class="youtube" href="https://youtube.com/"><i class="fab fa-telegram"></i></a>
+                                <a class="linkedin" href="https://www.linkedin.com/GrayGrids"><i
+                                        class="fab fa-linkedin"></i></a>
+                            </div>
+                            <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
+                            <form class="subscribe-box">
+                                <input type="text" placeholder="Your email">
+                                <input type="submit" class="btn-system" value="Send">
+                            </form>
+
                         </div>
                         <div class="inner-box">
                             <h3>Locations</h3>

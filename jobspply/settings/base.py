@@ -29,6 +29,7 @@ SECRET_KEY = config("SECRET_KEY")
 INSTALLED_APPS = [
     "jobs.apps.JobsConfig",
     "blog.apps.BlogConfig",
+    "users.apps.UsersConfig",
     "core.apps.CoreConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "tinymce",
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -104,3 +106,9 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# CRISPY FORMS
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+LOGIN_REDIRECT_URL = "jobs:home"
+LOGIN_URL = "login"
