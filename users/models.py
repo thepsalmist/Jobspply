@@ -8,6 +8,8 @@ class Profile(models.Model):
         default="default.jpg", blank=True, null=True, upload_to="Profiles"
     )
     bio = models.TextField(blank=True, null=True)
+    work_title = models.CharField(max_length=100, blank=True, null=True)
+    location = models.CharField(max_length=50, blank=True, null=True)
     work = models.TextField(blank=True, null=True)
     education = models.TextField(blank=True, null=True)
 
