@@ -38,6 +38,7 @@ urlpatterns = [
     path("tinymce/", include("tinymce.urls")),
     path("", include("jobs.urls", namespace="jobs")),
     path("blog/", include("blog.urls", namespace="blog")),
+    path("cv-services/", include("resume.urls", namespace="resume")),
 ]
 
 if settings.DEBUG:
