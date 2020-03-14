@@ -3,6 +3,7 @@ from django.db.models import Count, Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from collections import Counter
 from .models import Job
+from blog.models import Post
 
 
 def get_category():
@@ -17,6 +18,7 @@ def get_category():
 
 def home(request):
     jobs = Job.objects.all()
+    latest_posts = Post.objects.order_by("-publish")[:3]
     category = get_category()
     paginator = Paginator(jobs, 8)
     page = request.GET.get("page")
@@ -31,6 +33,7 @@ def home(request):
         "jobs": jobs,
         "category": category,
         "page": page,
+        "latest_posts": latest_posts,
     }
     return render(request, "jobs/index.html", context)
 
@@ -43,22 +46,24 @@ def job_detail(request, slug):
 
 def jobs_by_category(request, query=None):
     jobs = Job.objects.all()
+    category = get_category()
     if query is not None:
         lookup = Q(category__icontains=query)
         queryset = jobs.filter(lookup).all()
 
-        # paginator = Paginator(jobs, 6)
-        # page = request.GET.get("page")
-        # try:
-        #     queryset = paginator.page(page)
-        # except PageNotAnInteger:
-        #     queryset = paginator.page(1)
-        # except EmptyPage:
-        #     queryset = paginator.page(paginator.num_pages)
+    paginator = Paginator(queryset, 6)
+    page = request.GET.get("page")
+    try:
+        queryset = paginator.page(page)
+    except PageNotAnInteger:
+        queryset = paginator.page(1)
+    except EmptyPage:
+        queryset = paginator.page(paginator.num_pages)
 
     context = {
         "jobs": jobs,
         "queryset": queryset,
+        "category": category,
     }
     return render(request, "jobs/category.html", context)
 
@@ -66,11 +71,14 @@ def jobs_by_category(request, query=None):
 def job_search(request):
     queryset = Job.objects.all()
     query = request.GET.get("q")
-    print(query)
+    category = get_category()
+    choice = request.GET.get("choice")
     if query != "" and query is not None:
         queryset = queryset.filter(
             Q(title__icontains=query) | Q(description__icontains=query)
         )
+    if choice != "" and choice is not None and choice != "All Categories":
+        queryset = queryset.filter(category=choice)
 
     paginator = Paginator(queryset, 6)
     page = request.GET.get("page")
@@ -84,6 +92,26 @@ def job_search(request):
     context = {
         "queryset": queryset,
         "query": query,
+        "category": category,
     }
     return render(request, "jobs/search.html", context)
 
+
+def all_categories(request):
+    return render(request, "jobs/categories.html", context={})
+
+
+def contact(request):
+    return render(request, "jobs/contact.html", context={})
+
+
+def about(request):
+    return render(request, "jobs/about.html", context={})
+
+
+def privacy(request):
+    return render(request, "jobs/privacy.html", context={})
+
+
+def terms_of_service(request):
+    return render(request, "jobs/terms_of_service.html", context={})

@@ -18,16 +18,12 @@
                             <div class="col-md-5 col-sm-6">
                                 <div class="search-category-container">
                                     <label class="styled-select">
-                                        <select class="dropdown-product selectpicker" name="categories">
+                                        <select class="dropdown-product selectpicker" name="choice">
                                             <option>All Categories</option>
-                                            <option>Finance</option>
-                                            <option>IT & Engineering</option>
-                                            <option>Education/Training</option>
-                                            <option>Art/Design</option>
-                                            <option>Sale/Markting</option>
-                                            <option>Healthcare</option>
-                                            <option>Science</option>
-                                            <option>Food Services</option>
+                                            {% for cat in category %}
+                                            <option value="{{cat}}">{{cat}}</option>
+                                            {% endfor %}
+
                                         </select>
                                     </label>
                                 </div>

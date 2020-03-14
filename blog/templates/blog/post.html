@@ -1,5 +1,4 @@
 {% extends "jobs/base.html" %}
-
 {% block content %}
 {% include "jobs/head.html" %}
 <div class="page-header">
@@ -23,108 +22,46 @@
         <div class="row">
 
             <div class="col-md-9">
-
+                {% for post in posts %}
                 <div class="blog-post">
-
                     <div class="post-thumb">
-                        <a href="#"><img src="assets/img/blog/blog1.jpg" alt=""></a>
-                        <div class="hover-wrap">
-                        </div>
+                        <a href="{{post.get_absolute_url}}"><img src="{{post.image.url}}" alt="{{post.title}}"></a>
                     </div>
-
-
                     <div class="blog-author">
-                        <img src="assets/img/blog/author.jpg" alt="">
+                        <img src="{{post.author.profile_pic.url}}" alt="">
                     </div>
-
-
                     <div class="post-content">
-                        <h3 class="post-title"><a href="#">Let's explore 5 cool new features in JobBoard theme</a></h3>
+                        <h3 class="post-title"><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
                         <div class="meta">
-                            <span class="meta-part"><a href="#"><i class="ti-user"></i> By Admin</a></span>
-                            <span class="meta-part"><i class="ti-calendar"></i><a href="#"> 20.02.2018</a></span>
-                            <span class="meta-part"><a href="#"><i class="ti-comment-alt"></i> 5Comments</a></span>
+                            <span class="meta-part"><a href="#"><i class="far fa-user"></i> By
+                                    {{post.author}}</a></span>
+                            <span class="meta-part"><i class="far fa-calendar-alt"></i><a href="#">
+                                    {{post.publish}}</a></span>
                         </div>
-                        <p>Fusce fermentum ipsum mauris, rutrum ultrices ligula sodales et. Maecenas pellentesque
-                            aliquet arcu, vel elementum magna facilisis vitae. Nam in cursus lorem. Donec ac tellus
-                            nisl. Sed volutpat quis orci nec placerat. Fusec ex
-                            magna, congue sed vulpu-tate rhoncus, laoreet nec sapien.</p>
-                        <a href="#" class="btn btn-common">Read More</a>
+                        <p>{{post.description}}</p>
+                        <a href="{{post.get_absolute_url}}" class="btn btn-common">Read More</a>
                     </div>
 
                 </div>
-
-
-                <div class="blog-post">
-
-                    <div class="post-thumb">
-                        <a href="#"><img src="assets/img/blog/blog2.jpg" alt=""></a>
-                        <div class="hover-wrap">
-                        </div>
-                    </div>
-
-
-                    <div class="blog-author">
-                        <img src="assets/img/blog/author.jpg" alt="">
-                    </div>
-
-
-                    <div class="post-content">
-                        <h3 class="post-title"><a href="#">Employer branding: Get behind the wheel!</a></h3>
-                        <div class="meta">
-                            <span class="meta-part"><a href="#"><i class="ti-user"></i> By Admin</a></span>
-                            <span class="meta-part"><i class="ti-calendar"></i><a href="#"> 20.02.2018</a></span>
-                            <span class="meta-part"><a href="#"><i class="ti-comment-alt"></i> 5Comments</a></span>
-                        </div>
-                        <p>Fusce fermentum ipsum mauris, rutrum ultrices ligula sodales et. Maecenas pellentesque
-                            aliquet arcu, vel elementum magna facilisis vitae. Nam in cursus lorem. Donec ac tellus
-                            nisl. Sed volutpat quis orci nec placerat. Fusec ex
-                            magna, congue sed vulpu-tate rhoncus, laoreet nec sapien.</p>
-                        <a href="#" class="btn btn-common">Read More</a>
-                    </div>
-
-                </div>
-
-
-                <div class="blog-post">
-
-                    <div class="post-thumb">
-                        <a href="#"><img src="assets/img/blog/blog3.jpg" alt=""></a>
-                        <div class="hover-wrap">
-                        </div>
-                    </div>
-
-
-                    <div class="blog-author">
-                        <img src="assets/img/blog/author.jpg" alt="">
-                    </div>
-
-
-                    <div class="post-content">
-                        <h3 class="post-title"><a href="#">How to convince recruiters and get your dream job</a></h3>
-                        <div class="meta">
-                            <span class="meta-part"><a href="#"><i class="ti-user"></i> By Admin</a></span>
-                            <span class="meta-part"><i class="ti-calendar"></i><a href="#"> 20.02.2018</a></span>
-                            <span class="meta-part"><a href="#"><i class="ti-comment-alt"></i> 5Comments</a></span>
-                        </div>
-                        <p>Fusce fermentum ipsum mauris, rutrum ultrices ligula sodales et. Maecenas pellentesque
-                            aliquet arcu, vel elementum magna facilisis vitae. Nam in cursus lorem. Donec ac tellus
-                            nisl. Sed volutpat quis orci nec placerat. Fusec ex
-                            magna, congue sed vulpu-tate rhoncus, laoreet nec sapien.</p>
-                        <a href="#" class="btn btn-common">Read More</a>
-                    </div>
-
-                </div>
-
-
+                {% endfor %}
                 <ul class="pagination">
-                    <li class="active"><a href="#" class="btn btn-common"><i class="ti-angle-left"></i> prev</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li class="active"><a href="#" class="btn btn-common">Next <i class="ti-angle-right"></i></a></li>
+                    {% if posts.has_previous_page %}
+                    <li class="active"><a href="?page={{posts.previous_page_number}}" class="btn btn-common">prev</a>
+                    </li>
+                    {% endif %}
+
+                    {% for num in posts.paginator.page_range %}
+                    {% if num == posts.number %}
+                    <li><a href="#" class="active">{{num}}</a></li>
+
+                    {% elif num > posts.number|add:'-2' and num < posts.number|add:'2' %}
+                    <li><a href="?page={{num}}">{{num}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if posts.has_next_page %}
+                    <li class="active"><a href="?page={{posts.next_page_number}}" class="btn btn-common">Next </a></li>
+                    {% endif %}
                 </ul>
 
             </div>
@@ -134,8 +71,9 @@
 
                 <div class="widget widget-search">
                     <h5 class="widget-title">Search This Site</h5>
-                    <form action="#">
-                        <input class="form-control search" type="search" placeholder="Enter your keyword" />
+                    <form method="GET" action="{% url 'blog:search' %}">
+                        {% csrf_token %}
+                        <input class="form-control search" name="q" type="search" placeholder="Enter your keyword" />
                         <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>

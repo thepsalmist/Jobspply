@@ -1,0 +1,138 @@
+{% extends "jobs/base.html" %}
+{% block content %}
+{% include "jobs/head.html" %}
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-wrapper">
+                    <h2 class="product-title">Categories</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="ti-home"></i> Home</a></li>
+                        <li class="current">Browse Categories</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Jobs by Category</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='advertising' %}">
+                        <div class=" icon">
+                            <i class="fab fa-adversal"></i>
+                        </div>
+                        <h3>Advertising</h3>
+                        <p>4286 jobs</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='sales' %}">
+                        <div class="icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Sales/Marketing</h3>
+                        <p>2000 jobs</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='education' %}">
+                        <div class="icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Education/Training</h3>
+                        <p>1450 jobs</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='engineering' %}">
+                        <div class="icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>ICT/Engineering</h3>
+                        <p>5100 jobs</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='banking' %}">
+                        <div class="icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Banking</h3>
+                        <p>5079 jobs</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='government' %}">
+                        <div class="icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Government</h3>
+                        <p>3235 jobs</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='manufacturing' %}">
+                        <div class="icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Manufacturing</h3>
+                        <p>1800 jobs</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='ngo' %}">
+                        <div class="icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>NGOs</h3>
+                        <p>4286 jobs</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='consulting' %}">
+                        <div class="icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Consulting</h3>
+                        <p>4286 jobs</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='real estate' %}">
+                        <div class="icon">
+                            <i class="fas fa-sign"></i>
+                        </div>
+                        <h3>Real Estate</h3>
+                        <p>4286 jobs</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='security' %}">
+                        <div class="icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security</h3>
+                        <p>4286 jobs</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_category' query='insurance' %}">
+                        <div class="icon">
+                            <i class="fas fa-car-crash"></i>
+                        </div>
+                        <h3>Insurance</h3>
+                        <p>4286 jobs</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

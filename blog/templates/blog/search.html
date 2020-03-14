@@ -1,0 +1,71 @@
+{% extends "jobs/base.html" %}
+
+{% block content %}
+{% include "jobs/head.html" %}
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-wrapper">
+                    <h2 class="product-title">Blog</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="ti-home"></i> Search Results</a></li>
+                        <li class="current">Blog</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                {% for post in queryset %}
+                <div class="blog-post">
+                    <div class="blog-author">
+                        <img src="{{post.author.profile_pic.url}}" alt="">
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title"><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
+                        <div class="meta">
+                            <span class="meta-part"><a href="#"><i class="far fa-user"></i> By
+                                    {{post.author}}</a></span>
+                            <span class="meta-part"><i class="far fa-calendar-alt"></i><a href="#">
+                                    {{post.publish}}</a></span>
+                        </div>
+                        <p>{{post.description}}</p>
+                        <a href="{{post.get_absolute_url}}" class="btn btn-common">Read More</a>
+                    </div>
+
+                </div>
+                {% endfor %}
+                <ul class="pagination">
+                    {% if queryset.has_previous_page %}
+                    <li class="active"><a href="?page={{queryset.previous_page_number}}" class="btn btn-common">prev</a>
+                    </li>
+                    {% endif %}
+
+                    {% for num in queryset.paginator.page_range %}
+                    {% if num == queryset.number %}
+                    <li><a href="#" class="active">{{num}}</a></li>
+
+                    {% elif num > queryset.number|add:'-2' and num < queryset.number|add:'2' %}
+                    <li><a href="?page={{num}}">{{num}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if queryset.has_next_page %}
+                    <li class="active"><a href="?page={{queryset.next_page_number}}" class="btn btn-common">Next </a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+            </div>
+
+            {% include "blog/aside.html" with latest_posts=latest_posts %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

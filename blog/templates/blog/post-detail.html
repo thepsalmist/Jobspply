@@ -1,0 +1,66 @@
+{% extends "jobs/base.html" %}
+{% block content %}
+{% include "jobs/head.html" %}
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-wrapper">
+                    <h2 class="product-title">Career Post</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="{% url 'jobs:home' %}"><i class="ti-home"></i> Home</a></li>
+                        <li class="current">Career Post</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="blog-post">
+                    <div class="post-thumb">
+                        <a href="{{post.get_absolute_url}}"><img src="{{post.image.url}}" alt="{{post.title}}"></a>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title"><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
+
+                    <div class="meta">
+                        <span class="meta-part"><a href="#"><i class="far fa-user"></i> By {{post.author}}</a></span>
+                        <span class="meta-part"><i class="far fa-calendar-alt"></i><a href="#">
+                                {{post.publish}}</a></span>
+
+                    </div>
+                    <hr>
+                    <div>
+                        <p>{{post.body|safe}}</p>
+                    </div>
+
+
+                    <div class="share-social">
+                        <span>Share This Job:</span>
+                        <div class="social-link">
+                            <a class="twitter" target="_blank" data-original-title="twitter" href="#"
+                                data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a>
+                            <a class="facebook" target="_blank" data-original-title="facebook" href="#"
+                                data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a>
+                            <a class="google" target="_blank" data-original-title="google-plus" href="#"
+                                data-toggle="tooltip" data-placement="top"><i class="fa fa-google"></i></a>
+                            <a class="linkedin" target="_blank" data-original-title="linkedin" href="#"
+                                data-toggle="tooltip" data-placement="top"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {% include 'blog/aside.html' %}
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

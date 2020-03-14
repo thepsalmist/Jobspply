@@ -24,7 +24,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{% url 'jobs:home' %}">
+                                <a href="{% url 'jobs:categories' %}">
                                     Categories
                                 </a>
                                 <ul class="dropdown">
@@ -93,7 +93,7 @@
                         <a class="active" href="{% url 'jobs:home' %}">Home</a>
                     </li>
                     <li>
-                        <a href="">Categories</a>
+                        <a href="{% url 'jobs:categories' %}">Categories</a>
                         <ul>
                             <li>
                                 <a href="{%url 'jobs:jobs_by_category' query='advertising' %}">

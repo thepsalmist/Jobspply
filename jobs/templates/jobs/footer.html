@@ -19,11 +19,10 @@
                     <div class="widget">
                         <h3 class="block-title">Quick Links</h3>
                         <ul class="menu">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">License</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{% url 'jobs:about' %}">About Us</a></li>
+                            <li><a href="{% url 'jobs:contact' %}">Contact</a></li>
+                            <li><a href="{% url 'jobs:privacy' %}">Privacy Policy</a></li>
+                            <li><a href="{% url 'jobs:terms_of_service' %}">Terms & Conditions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -39,7 +38,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-3 col-sm-6 col-xs-12" id="subscribe">
                     <div class="widget">
                         <h3 class="block-title">Follow Us</h3>
                         <div class="bottom-social-icons social-icon">

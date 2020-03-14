@@ -1715,7 +1715,6 @@ label {
 }
 
 .infobox .info-text {
-  float: left;
   display: inline-block
 }
 
@@ -1798,6 +1797,33 @@ footer .menu li a:hover {
   -moz-border-radius: 0;
   -o-border-radius: 0;
   outline: none
+}
+
+.second input[type=text]{
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 12px;
+  border: 2px solid;
+  background: #333;
+  margin-bottom: 5px;
+  border-radius: 0;
+  outline: none
+}
+
+.second input[type=submit]{
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  background: #67900B;
+  text-transform: uppercase;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 4px;
+  transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out
 }
 
 .subscribe-box input[type=submit] {
@@ -3225,25 +3251,6 @@ table.add-manage-table>tbody>tr>td, table.add-manage-table>tbody>tr>th {
 
 .blog-post .post-thumb {
   position: relative
-}
-
-.blog-post .post-thumb .hover-wrap {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: block;
-  width: 100%;
-  text-align: center;
-  height: 100%;
-  background: rgba(5, 47, 67, .8);
-  opacity: 0;
-  -webkit-transition: all .4s ease;
-  -moz-transition: all .4s ease;
-  transition: all .4s ease
-}
-
-.blog-post .post-thumb:hover .hover-wrap {
-  opacity: 1
 }
 
 .blog-post .post-thumb:hover .link {

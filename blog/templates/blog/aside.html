@@ -1,0 +1,88 @@
+<aside id="sidebar" class="col-md-3 right-sidebar">
+
+    <div class="widget widget-search">
+        <h5 class="widget-title">Search This Site</h5>
+        <form method="GET" action="{% url 'blog:search' %}">
+            {% csrf_token %}
+            <input class="form-control search" name="q" type="search" placeholder="Enter your keyword" />
+            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+
+    <div class="widget widget-categories">
+        <h5 class="widget-title">Categories</h5>
+        <ul class="cat-list">
+            <li>
+                <a href="#">Announcement <span class="num-posts">(4)</span></a>
+            </li>
+            <li>
+                <a href="#">Indeed Events <span class="num-posts">(2)</span></a>
+            </li>
+            <li>
+                <a href="#">Tips & Tricks <span class="num-posts">(3)</span></a>
+            </li>
+            <li>
+                <a href="#">Experiences <span class="num-posts">(5)</span></a>
+            </li>
+            <li>
+                <a href="#">Case Studies <span class="num-posts">(6)</span></a>
+            </li>
+            <li>
+                <a href="#">Labor Market News <span class="num-posts">(9)</span></a>
+            </li>
+            <li>
+                <a href="#">HR Best Practices <span class="num-posts">(17)</span></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="widget widget-popular-posts">
+        <h5 class="widget-title">Recent Post</h5>
+        <ul class="posts-list">
+            {% for post in latest_posts %}
+            <li>
+                <div class="widget-content">
+                    <a href="{{post.get_absolute_url}}">{{post.title}}</a>
+                    <span><i class="far fa-calendar-alt"></i> {{post.publish}}</span>
+                </div>
+                <div class="clearfix"></div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="widget tag">
+        <h5 class="widget-title">Tags</h5>
+        {% for tag in tags %}
+        <a href="#"> {{tag}}</a>
+
+        {% endfor %}
+    </div>
+
+    <div class="widget widget-archives">
+        <h5 class="widget-title">Archives</h5>
+        <ul class="cat-list">
+            <li>
+                <a href="#">October 2016 <span class="num-posts">(29)</span></a>
+            </li>
+            <li>
+                <a href="#">September 2016 <span class="num-posts">(34)</span></a>
+            </li>
+            <li>
+                <a href="#">August 2016 <span class="num-posts">(23)</span></a>
+            </li>
+            <li>
+                <a href="#">July 2016 <span class="num-posts">(38)</span></a>
+            </li>
+            <li>
+                <a href="#">June 2016 <span class="num-posts">(16)</span></a>
+            </li>
+            <li>
+                <a href="#">May 2016 <span class="num-posts">(14)</span></a>
+            </li>
+            <li>
+                <a href="#">April 2016 <span class="num-posts">(17)</span></a>
+            </li>
+        </ul>
+    </div>
+</aside>
