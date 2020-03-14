@@ -1,9 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Count, Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.contrib import messages
 from collections import Counter
 from .models import Job
 from blog.models import Post
+from marketing.models import SignUp
+from marketing.forms import SignUpForm
 
 
 def get_category():
@@ -22,6 +25,17 @@ def home(request):
     category = get_category()
     paginator = Paginator(jobs, 8)
     page = request.GET.get("page")
+
+    # Newsletter Signup
+    if request.method == "POST":
+        s_form = SignUpForm(request.POST)
+        if s_form.is_valid():
+            s_form.save()
+            messages.success(request, "Thank you for subscribing to our newsletter")
+            return redirect("jobs:home")
+    else:
+        s_form = SignUpForm()
+
     try:
         jobs = paginator.page(page)
     except PageNotAnInteger:
@@ -34,6 +48,7 @@ def home(request):
         "category": category,
         "page": page,
         "latest_posts": latest_posts,
+        "s_form": s_form,
     }
     return render(request, "jobs/index.html", context)
 
@@ -47,6 +62,16 @@ def job_detail(request, slug):
 def jobs_by_category(request, query=None):
     jobs = Job.objects.all()
     category = get_category()
+    # Newsletter Signup
+    if request.method == "POST":
+        s_form = SignUpForm(request.POST)
+        if s_form.is_valid():
+            s_form.save()
+            messages.success(request, "Thank you for subscribing to our newsletter")
+            return redirect("jobs:home")
+    else:
+        s_form = SignUpForm()
+    # Lookup
     if query is not None:
         lookup = Q(category__icontains=query)
         queryset = jobs.filter(lookup).all()
@@ -64,6 +89,7 @@ def jobs_by_category(request, query=None):
         "jobs": jobs,
         "queryset": queryset,
         "category": category,
+        "s_form": s_form,
     }
     return render(request, "jobs/category.html", context)
 

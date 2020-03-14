@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "jobs.apps.JobsConfig",
     "blog.apps.BlogConfig",
     "users.apps.UsersConfig",
+    "marketing.apps.MarketingConfig",
     "core.apps.CoreConfig",
     "django.contrib.admin",
     "django.contrib.auth",
