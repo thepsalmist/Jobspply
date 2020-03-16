@@ -55,7 +55,22 @@ def home(request):
 
 def job_detail(request, slug):
     job = get_object_or_404(Job, slug=slug)
-    context = {"job": job}
+    category = get_category()
+
+    if request.method == "POST":
+        s_form = SignUpForm(request.POST)
+        if s_form.is_valid():
+            s_form.save()
+            messages.success(request, "Thank you for subscribing to our newsletter")
+            return redirect("jobs:home")
+    else:
+        s_form = SignUpForm()
+
+    context = {
+        "job": job,
+        "category": category,
+        "s_form": s_form,
+    }
     return render(request, "jobs/job_detail.html", context)
 
 
