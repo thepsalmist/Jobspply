@@ -56,6 +56,9 @@ def home(request):
 
 def job_detail(request, slug):
     job = get_object_or_404(Job, slug=slug)
+    similar_jobs = Job.objects.filter(category__icontains=job.category).exclude(
+        id=job.id
+    )[:4]
     category = get_category()
 
     if request.method == "POST":
@@ -71,6 +74,7 @@ def job_detail(request, slug):
         "job": job,
         "category": category,
         "s_form": s_form,
+        "similar_jobs": similar_jobs,
     }
     return render(request, "jobs/job_detail.html", context)
 
