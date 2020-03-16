@@ -144,6 +144,8 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
+            name = form.cleaned_data.get("name")
+            messages.success(request, f"Thank you {name} for contacting us")
 
             return redirect("jobs:home")
     else:

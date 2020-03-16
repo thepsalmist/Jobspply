@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from tinymce import HTMLField
+from taggit.managers import TaggableManager
 from django.db.models.signals import pre_save
 from jobspply.utils import slug_generator
 
@@ -16,6 +17,7 @@ class Job(models.Model):
     thumbnail = models.URLField(null=True, blank=True)
     publish = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
+    tags = TaggableManager()
 
     class Meta:
         ordering = ("-publish",)
