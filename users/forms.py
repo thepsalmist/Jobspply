@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile
+from .models import Profile, Contact
 
 
 class UserRegisterForm(UserCreationForm):
@@ -33,4 +33,16 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ["work_title", "location", "bio", "work", "education"]
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ["name", "email", "subject", "message"]
+        widgets = {
+            "name": forms.TextInput(attrs={"placeholder": "Enter your name"}),
+            "email": forms.TextInput(attrs={"placeholder": "mail@domain.com"}),
+            "subject": forms.TextInput(attrs={"placeholder": "Subject"}),
+            "message": forms.Textarea(attrs={"placeholder": "Message", "rows": 10}),
+        }
 

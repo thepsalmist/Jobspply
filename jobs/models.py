@@ -15,6 +15,7 @@ class Job(models.Model):
     job_url = models.URLField()
     thumbnail = models.URLField(null=True, blank=True)
     publish = models.DateTimeField(default=timezone.now)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ("-publish",)
@@ -32,3 +33,4 @@ def slug_save(sender, instance, *args, **kwargs):
 
 
 pre_save.connect(slug_save, sender=Job)
+

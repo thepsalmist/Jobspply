@@ -7,6 +7,7 @@ from .models import Job
 from blog.models import Post
 from marketing.models import SignUp
 from marketing.forms import SignUpForm
+from users.forms import ContactForm
 
 
 def get_category():
@@ -138,12 +139,25 @@ def job_search(request):
     return render(request, "jobs/search.html", context)
 
 
+def contact(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            return redirect("jobs:home")
+    else:
+        form = ContactForm()
+
+    context = {
+        "form": form,
+    }
+
+    return render(request, "jobs/contact.html", context)
+
+
 def all_categories(request):
     return render(request, "jobs/categories.html", context={})
-
-
-def contact(request):
-    return render(request, "jobs/contact.html", context={})
 
 
 def about(request):

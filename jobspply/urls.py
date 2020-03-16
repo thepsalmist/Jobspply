@@ -18,7 +18,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
+from django.contrib.sitemaps.views import sitemap
+from jobs.sitemaps import JobSitemap
 from users import views as user_views
+
+sitemaps = {
+    "jobs": JobSitemap,
+}
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -39,6 +45,12 @@ urlpatterns = [
     path("", include("jobs.urls", namespace="jobs")),
     path("blog/", include("blog.urls", namespace="blog")),
     path("cv-services/", include("resume.urls", namespace="resume")),
+    path(
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": sitemaps},
+        name="django.contrib.sitemaps.views.sitemap",
+    ),
 ]
 
 if settings.DEBUG:

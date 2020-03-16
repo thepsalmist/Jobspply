@@ -8,11 +8,7 @@ class SignUpForm(forms.ModelForm):
         fields = ["email"]
         widgets = {
             "email": forms.TextInput(
-                attrs={
-                    "class": "form-control",
-                    "placeholder": "Enter your email",
-                    "rows": 50,
-                }
+                attrs={"class": "form-control", "placeholder": "Enter your email",}
             )
         }
 
