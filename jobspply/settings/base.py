@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
     "tinymce",
     "crispy_forms",
     "taggit",
@@ -115,3 +117,6 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 LOGIN_REDIRECT_URL = "jobs:home"
 LOGIN_URL = "login"
+
+# Sitemap
+SITE_ID = 1
