@@ -43,7 +43,7 @@ urlpatterns = [
     ),
     path("tinymce/", include("tinymce.urls")),
     path("", include("jobs.urls", namespace="jobs")),
-    path("blog/", include("blog.urls", namespace="blog")),
+    path("career/", include("career.urls", namespace="career")),
     path("cv-services/", include("resume.urls", namespace="resume")),
     path(
         "sitemap.xml",
