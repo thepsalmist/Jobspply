@@ -64,7 +64,6 @@ class Command(BaseCommand):
                     job.category = job_category
                     job.thumbnail = job_thumbnail
                     job.body = job_detail
-                    job.tags = job_category
 
                     job.save()
                     print("%s added" % (job_title,))
