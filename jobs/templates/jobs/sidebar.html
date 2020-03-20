@@ -23,7 +23,7 @@
                     <a class="linkedin" href=""><i class="fab fa-linkedin"></i></a>
                 </div>
                 <p>Join our mailing list to stay up to date and get notices about our new job postings!</p>
-                <form method="POST" class="second">
+                <form method="POST" action="{% url 'marketing:subscribe' %}" class="second">
                     {% csrf_token %}
                     {{s_form|crispy}}
                     <input type="submit" class="btn-system" value="Send">

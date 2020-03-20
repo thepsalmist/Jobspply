@@ -26,16 +26,17 @@ def home(request):
     category = get_category()
     paginator = Paginator(jobs, 8)
     page = request.GET.get("page")
+    s_form = SignUpForm()
 
     # Newsletter Signup
-    if request.method == "POST":
-        s_form = SignUpForm(request.POST)
-        if s_form.is_valid():
-            s_form.save()
-            messages.success(request, "Thank you for subscribing to our newsletter")
-            return redirect("jobs:home")
-    else:
-        s_form = SignUpForm()
+    # if request.method == "POST":
+    #     s_form = SignUpForm(request.POST)
+    #     if s_form.is_valid():
+    #         s_form.save()
+    #         messages.success(request, "Thank you for subscribing to our newsletter")
+    #         return redirect("jobs:home")
+    # else:
+    #     s_form = SignUpForm()
 
     try:
         jobs = paginator.page(page)
