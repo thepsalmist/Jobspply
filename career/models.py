@@ -8,6 +8,30 @@ from taggit.managers import TaggableManager
 User = get_user_model()
 
 
+class Category(models.Model):
+    CATEGORY_CHOICES = (
+        ("interviews", "INTERVIEWS"),
+        ("career_development", "CAREER_DEVELOPMENT"),
+        ("resumes", "RESUMES"),
+        ("salaries", "SALARIES"),
+    )
+    title = models.CharField(
+        choices=CATEGORY_CHOICES, max_length=100, default="interviews"
+    )
+    slug = models.SlugField(max_length=100, db_index=True)
+
+    class Meta:
+        ordering = ("title",)
+        verbose_name = "category"
+        verbose_name_plural = "categories"
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("career:post_category", args=[self.slug])
+
+
 class Author(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     profile_pic = models.ImageField(default="Author.jpg", upload_to="Authors")
@@ -21,6 +45,9 @@ class Post(models.Model):
     slug = models.SlugField(unique=True, unique_for_date="publish")
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     description = models.TextField()
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name="posts", default=1
+    )
     body = HTMLField()
     image = models.ImageField(default="post.jpeg", upload_to="Post %Y%M%d")
     publish = models.DateTimeField(default=timezone.now)
@@ -34,6 +61,6 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            "blog:post_detail",
+            "career:post_detail",
             args=[self.publish.year, self.publish.month, self.publish.day, self.slug],
         )

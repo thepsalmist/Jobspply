@@ -1,0 +1,45 @@
+<aside id="sidebar" class="col-md-3 right-sidebar">
+
+    <div class="widget widget-search">
+        <h5 class="widget-title">Search This Site</h5>
+        <form method="GET" action="{% url 'career:search' %}">
+            {% csrf_token %}
+            <input class="form-control search" name="q" type="search" placeholder="Enter your keyword" />
+            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+
+    <div class="widget widget-categories">
+        <h5 class="widget-title">Categories</h5>
+        <ul class="cat-list">
+            {% for cat in categories %}
+            <li>
+                <a href="#">{{cat.title|capfirst}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="widget widget-popular-posts">
+        <h5 class="widget-title">Recent Post</h5>
+        <ul class="posts-list">
+            {% for post in latest_posts %}
+            <li>
+                <div class="widget-content">
+                    <a href="{{post.get_absolute_url}}">{{post.title}}</a>
+                    <span><i class="far fa-calendar-alt"></i> {{post.publish}}</span>
+                </div>
+                <div class="clearfix"></div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="widget tag">
+        <h5 class="widget-title">Tags</h5>
+        {% for tag in tags %}
+        <a href="#"> {{tag.name}}</a>
+
+        {% endfor %}
+    </div>
+</aside>

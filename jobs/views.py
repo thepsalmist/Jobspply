@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib import messages
 from collections import Counter
 from .models import Job
-from blog.models import Post
+from career.models import Post
 from marketing.models import SignUp
 from marketing.forms import SignUpForm
 from users.forms import ContactForm

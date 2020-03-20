@@ -28,7 +28,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 INSTALLED_APPS = [
     "jobs.apps.JobsConfig",
-    "blog.apps.BlogConfig",
+    "career.apps.CareerConfig",
     "users.apps.UsersConfig",
     "marketing.apps.MarketingConfig",
     "resume.apps.ResumeConfig",
