@@ -45,6 +45,7 @@ urlpatterns = [
     path("", include("jobs.urls", namespace="jobs")),
     path("career/", include("career.urls", namespace="career")),
     path("cv-services/", include("resume.urls", namespace="resume")),
+    path("subscribe/", include("marketing.urls", namespace="marketing")),
     path(
         "sitemap.xml",
         sitemap,

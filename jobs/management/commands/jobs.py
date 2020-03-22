@@ -54,7 +54,7 @@ class Command(BaseCommand):
             if job_title and job_description and job_link is not None:
                 # save to db
                 try:
-                    job = Job.objects.get(title=job_title)
+                    job = Job.objects.get(title=job_title, job_url=job_link)
                     print("%s already exists" % (job_title,))
                 except Exception as e:
                     job = Job()
@@ -71,4 +71,3 @@ class Command(BaseCommand):
         csv_file.close()
 
         self.stdout.write("job complete")
-
