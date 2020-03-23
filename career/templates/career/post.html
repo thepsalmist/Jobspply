@@ -1,4 +1,10 @@
 {% extends "jobs/base.html" %}
+
+{% block meta %} JobsearchKE Career Blog provides you with the latest career advice in Kenya 2020. We advice on Interview tips, Career Development and the Work Environment {% endblock %}
+
+{% block keyword %} jobs kenya, ngo jobs, latest jobs in kenya 2020 {% endblock %}
+{% block title%} JobsearchKE | Career Blog | Best Career Advice in Kenya {% endblock %}
+
 {% block content %}
 {% include "jobs/head.html" %}
 <div class="page-header">
@@ -38,7 +44,7 @@
                             <span class="meta-part"><i class="far fa-calendar-alt"></i><a href="#">
                                     {{post.publish}}</a></span>
                         </div>
-                        <p>{{post.description}}</p>
+                        <p>{{post.description|truncatewords:50}}</p>
                         <a href="{{post.get_absolute_url}}" class="btn btn-common">Read More</a>
                     </div>
 

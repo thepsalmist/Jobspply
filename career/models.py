@@ -41,8 +41,8 @@ class Author(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True, unique_for_date="publish")
+    title = models.CharField(max_length=250)
+    slug = models.SlugField(unique=True, unique_for_date="publish", max_length=250)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     description = models.TextField()
     category = models.ForeignKey(

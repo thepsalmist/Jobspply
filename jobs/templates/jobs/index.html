@@ -1,5 +1,9 @@
 {% extends "jobs/base.html" %}
 
+{% block ads %}
+<script data-ad-client="ca-pub-1810260271665361" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{% endblock %}
+
 {% block meta %} JobsearchKE provides you with the latest job opportunities in Kenya 2020. Sign Up to our platform to
 receive updates on the latest vaccancies, top resume templates and career advice {% endblock %}
 
@@ -171,7 +175,7 @@ receive updates on the latest vaccancies, top resume templates and career advice
                             </h3>
                         </a>
                         <p>
-                            {{post.body|safe|truncatewords:20}}
+                            {{post.description|truncatewords:20}}
                         </p>
                         <a href="{{post.get_absolute_url}}" class="btn btn-common btn-rm">Read More</a>
                     </div>

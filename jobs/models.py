@@ -33,4 +33,3 @@ def slug_save(sender, instance, *args, **kwargs):
 
 
 pre_save.connect(slug_save, sender=Job)
-

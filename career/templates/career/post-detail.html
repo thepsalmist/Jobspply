@@ -1,4 +1,8 @@
 {% extends "jobs/base.html" %}
+
+{% block meta %}{{post.description}} {% endblock %}
+{% block title%} JobsearchKE|Career Blog|{{post.title}} {% endblock %}
+
 {% block content %}
 {% include "jobs/head.html" %}
 <div class="page-header">
@@ -40,21 +44,9 @@
                     <div>
                         <p>{{post.body|safe}}</p>
                     </div>
+<hr>
 
-
-                    <div class="share-social">
-                        <span>Share This Post:</span>
-                        <div class="social-link">
-                            <a class="twitter" target="_blank" data-original-title="twitter" href="#"
-                                data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a>
-                            <a class="facebook" target="_blank" data-original-title="facebook" href="#"
-                                data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a>
-                            <a class="google" target="_blank" data-original-title="google-plus" href="#"
-                                data-toggle="tooltip" data-placement="top"><i class="fa fa-google"></i></a>
-                            <a class="linkedin" target="_blank" data-original-title="linkedin" href="#"
-                                data-toggle="tooltip" data-placement="top"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
+                    
                 </div>
 
             </div>
