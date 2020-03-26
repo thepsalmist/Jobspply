@@ -52,6 +52,7 @@ urlpatterns = [
         {"sitemaps": sitemaps},
         name="django.contrib.sitemaps.views.sitemap",
     ),
+    path("api-auth/", include("rest_framework.urls")),
 ]
 
 if settings.DEBUG:
