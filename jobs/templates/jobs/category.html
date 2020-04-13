@@ -1,6 +1,7 @@
 {% extends "jobs/base.html" %}
 {% block tag %}
-<script data-ad-client="ca-pub-1810260271665361" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script data-ad-client="ca-pub-1810260271665361" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {% endblock %}
 {% block meta %} Latest Jobs in Kenya 2020 | jobsearchKE
 {% endblock %}
@@ -32,7 +33,7 @@
                 {% for query in queryset %}
                 <div class="job-list">
                     <div class="thumb">
-                        <a href="{{query.get_absolute_url}}"><img src="{{query.thumbnail}}" alt=""></a>
+                        <a href="{{query.get_absolute_url}}"><img src="{{query.image.url}}" alt=""></a>
                     </div>
                     <div class="job-list-content">
                         <h4><a href="{{query.get_absolute_url}}">{{query.title}}</a></h4>

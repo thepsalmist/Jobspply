@@ -1,9 +1,8 @@
 from .base import *
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", "178.62.70.232",
-                 "www.jobsearchke.com", "jobsearchke.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "178.62.70.232", "www.jobsearchke.com", "jobsearchke.com"]
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
