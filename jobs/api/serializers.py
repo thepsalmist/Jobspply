@@ -2,7 +2,7 @@ from rest_framework.serializers import ModelSerializer
 from jobs.models import Job
 
 
-class JobsSerializer(ModelSerializer):
+class JobListSerializer(ModelSerializer):
     class Meta:
         model = Job
         fields = [
@@ -15,3 +15,8 @@ class JobsSerializer(ModelSerializer):
             "publish",
         ]
 
+
+class JobDetailSerializer(ModelSerializer):
+    class Meta:
+        model = Job
+        fields = "__all__"

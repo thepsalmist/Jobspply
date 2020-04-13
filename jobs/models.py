@@ -13,7 +13,10 @@ class Job(models.Model):
     body = HTMLField()
     category = models.CharField(max_length=100)
     job_url = models.URLField()
-    thumbnail = models.URLField(null=True, blank=True)
+    thumbnail = models.URLField(blank=True, null=True)
+    image = models.ImageField(
+        default="logo.png", blank=True, null=True, upload_to="Logos %Y%M%d"
+    )
     publish = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
 
