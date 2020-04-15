@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 
 class Command(BaseCommand):
-    help = "Scrapes Job Board"
+    help = "Scrapes MyJobMag "
 
     def handle(self, *args, **kwargs):
         base_url = "https://www.myjobmag.co.ke"

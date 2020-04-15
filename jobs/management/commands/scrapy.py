@@ -39,13 +39,19 @@ class Command(BaseCommand):
                 description = None
 
             if title and link and description is not None:
-                job = Corporate()
-                job.title = title
-                job.description = description
-                job.job_url = link
-                job.save()
-                print(f"{title} added")
+                try:
+                    job = Corporate.objects.get(title=title, job_url=link)
+                    print(f"{title} already exists")
+                except Exception as e:
+                    job = Corporate()
+                    job.title = title
+                    job.description = description
+                    job.job_url = link
+                    job.save()
+                    print(f"{title} added")
 
             csv_writer.writerow([title, description, link, job_detail])
 
         csv_file.close
+
+        self.stdout.write("job complete")
