@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "taggit",
     "rest_framework",
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -112,6 +113,26 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# AWS_ACCESS_KEY_ID = config("ACCESS_KEY_ID")
+# AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
+# AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
+# AWS_S3_ENDPOINT_URL = config("AWS_S3_ENDPOINT_URL")
+# AWS_ACCESS_KEY_ID = "EQGV2MPC7BLGPWEPE5I2"
+# AWS_SECRET_ACCESS_KEY = "TFsCcz+nivkwfICdHw+Fr9selkU0jNjKLmFuw1vX0hY"
+# AWS_STORAGE_BUCKET_NAME = "jobsearch-spaces"
+# AWS_S3_ENDPOINT_URL = "https://ams3.digitaloceanspaces.com"
+# AWS_LOCATION = "jobsearch-files"
+# AWS_S3_OBJECT_PARAMETERS = {
+#     "CacheControl": "max-age=86400",
+# }
+# AWS_LOCATION = config("AWS_LOCATION")
+
+# STATIC_URL = "https://%s/%s/" % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
+# STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+# DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+# AWS_DEFAULT_ACL = None
 
 # CRISPY FORMS
 CRISPY_TEMPLATE_PACK = "bootstrap4"
