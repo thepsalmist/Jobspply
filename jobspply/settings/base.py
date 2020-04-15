@@ -27,6 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 # Application definition
 
 INSTALLED_APPS = [
+    "warehouse.apps.WarehouseConfig",
     "jobs.apps.JobsConfig",
     "career.apps.CareerConfig",
     "users.apps.UsersConfig",

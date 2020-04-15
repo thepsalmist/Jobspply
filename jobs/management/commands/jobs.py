@@ -1,7 +1,7 @@
 import requests
 import csv
 from django.core.management.base import BaseCommand
-from jobs.models import Job
+from warehouse.models import Myjobmag
 from bs4 import BeautifulSoup
 
 
@@ -54,10 +54,10 @@ class Command(BaseCommand):
             if job_title and job_description and job_link is not None:
                 # save to db
                 try:
-                    job = Job.objects.get(title=job_title, job_url=job_link)
+                    job = Myjobmag.objects.get(title=job_title, job_url=job_link)
                     print("%s already exists" % (job_title,))
                 except Exception as e:
-                    job = Job()
+                    job = Myjobmag()
                     job.title = job_title
                     job.description = job_description
                     job.job_url = job_link
