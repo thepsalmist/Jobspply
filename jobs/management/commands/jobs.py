@@ -38,7 +38,7 @@ class Command(BaseCommand):
                 if job_link is not None:
                     source = requests.get(job_link).text
                     soup = BeautifulSoup(source, "lxml")
-                    job_detail = soup.find("div", class_="job-details").text
+                    job_detail = soup.find("div", class_="job_description").text
 
             except Exception as e:
                 job_title = None
