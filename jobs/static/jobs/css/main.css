@@ -957,6 +957,14 @@ nav#menu span.fa.fa-bars:hover {
   text-transform: capitalize;
   margin-bottom: 15px
 }
+/* Banner Ad */
+.banner-ad{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.banner-ad a{
+  padding-bottom: 20px;
+}
 
 #search-row-wrapper {
   background: url(../img/bg/counter-bg.jpg) center center no-repeat;
@@ -2259,20 +2267,23 @@ footer {
   margin-right: 5px;
   color: #67900B
 }
-
+.job-detail .text-box a {
+  text-align: center;
+  margin-left: 25px;
+}
 .job-detail .sidebar .thumb {
   width: 100%;
   position: relative;
   border-radius: 4px;
   margin-bottom: 20px
 }
-
 .job-detail .sidebar .text-box h4 {
   margin: 0 0 12px
 }
 
 .job-detail .sidebar .text-box h4 a {
-  color: #67900B
+  color: #67900B;
+  
 }
 
 .job-detail .sidebar .text-box p {
