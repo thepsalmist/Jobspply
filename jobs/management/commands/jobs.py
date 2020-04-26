@@ -18,7 +18,14 @@ class Command(BaseCommand):
         csv_file = open("kenya_jobs.csv", "w")
         csv_writer = csv.writer(csv_file)
         csv_writer.writerow(
-            ["job_title", "job_category", "job_description", "job_link", "job_detail"]
+            [
+                "job_title",
+                "job_category",
+                "job_date",
+                "job_description",
+                "job_link",
+                "job_detail",
+            ]
         )
 
         for job_list in soup.find_all("li", class_="job-list-li"):
@@ -30,6 +37,7 @@ class Command(BaseCommand):
                 job_link = job_list.find("li", class_="mag-b").a["href"]
                 job_category = job_list.find("li", class_="job-item").a.text
                 job_category = job_category.split("/")[0]
+                job_date = job_list.find("li", id="job-date").text
                 job_link = base_url + job_link
                 job_thumbnail = str(job_list.find("li", class_="job-logo").img["src"])
                 job_thumbnail = "%20".join(job_thumbnail.split())
@@ -38,7 +46,7 @@ class Command(BaseCommand):
                 if job_link is not None:
                     source = requests.get(job_link).text
                     soup = BeautifulSoup(source, "lxml")
-                    job_detail = soup.find("div", class_="job-details").text
+                    job_detail = soup.find("div", class_="job_description").text
 
             except Exception as e:
                 job_title = None
@@ -49,7 +57,14 @@ class Command(BaseCommand):
 
             # save to csv
             csv_writer.writerow(
-                [job_title, job_category, job_description, job_link, job_detail]
+                [
+                    job_title,
+                    job_category,
+                    job_date,
+                    job_description,
+                    job_link,
+                    job_detail,
+                ]
             )
             if job_title and job_description and job_link is not None:
                 # save to db
