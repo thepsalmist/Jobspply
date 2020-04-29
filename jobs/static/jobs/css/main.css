@@ -2657,10 +2657,13 @@ footer {
 .my-resume .author-resume .author-info .social-link {
   margin-top: 5px
 }
-.my-resume .author-resume .author-info a{
+.my-resume .author-resume .author-info button{
   margin-top: 20px;
-  color: #67900B;
+  padding-top: 5px;
+  color: #000000;
+  background: #67900b;
   text-transform: uppercase;
+  font-weight: 700;
 }
 .my-resume .skill {
   margin-top: 30px
