@@ -2657,7 +2657,14 @@ footer {
 .my-resume .author-resume .author-info .social-link {
   margin-top: 5px
 }
-
+.my-resume .author-resume .author-info button{
+  margin-top: 20px;
+  padding-top: 5px;
+  color: #000000;
+  background: #67900b;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 .my-resume .skill {
   margin-top: 30px
 }
@@ -3847,9 +3854,9 @@ blockquote p a:hover {
   }
 }
 
-#cd-login, #cd-signup, #cd-reset-password {
-  display: none
-}
+/* #cd-login, #cd-signup, #cd-reset-password {
+
+} */
 
 #cd-login.is-selected, #cd-signup.is-selected, #cd-reset-password.is-selected {
   display: block

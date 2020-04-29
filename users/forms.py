@@ -33,6 +33,16 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ["work_title", "location", "bio", "work", "education"]
+        widgets = {
+            "work_title": forms.TextInput(
+                attrs={"placeholder": "Enter your job title"}
+            ),
+            "location": forms.TextInput(attrs={"placeholder": "Enter your location"}),
+            "bio": forms.Textarea(attrs={"placeholder": "About you", "rows": 10}),
+            "education": forms.TextInput(
+                attrs={"placeholder": "Your education background"}
+            ),
+        }
 
 
 class ContactForm(forms.ModelForm):
@@ -45,4 +55,3 @@ class ContactForm(forms.ModelForm):
             "subject": forms.TextInput(attrs={"placeholder": "Subject"}),
             "message": forms.Textarea(attrs={"placeholder": "Message", "rows": 10}),
         }
-

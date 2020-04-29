@@ -27,10 +27,10 @@ SECRET_KEY = config("SECRET_KEY")
 # Application definition
 
 INSTALLED_APPS = [
+    "users.apps.UsersConfig",
     "warehouse.apps.WarehouseConfig",
     "jobs.apps.JobsConfig",
     "career.apps.CareerConfig",
-    "users.apps.UsersConfig",
     "marketing.apps.MarketingConfig",
     "resume.apps.ResumeConfig",
     "core.apps.CoreConfig",
@@ -145,6 +145,16 @@ LOGIN_URL = "login"
 MAILCHIMP_API_KEY = config("MAILCHIMP_API_KEY")
 MAILCHIMP_DATA_CENTER = config("MAILCHIMP_DATA_CENTER")
 MAILCHIMP_EMAIL_LIST_ID = config("MAILCHIMP_EMAIL_LIST_ID")
+
+# Email
+DEFAULT_FROM_EMAIL = config("EMAIL_HOST")
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = config("EMAIL_HOST")
+EMAIL_PORT = config("EMAIL_PORT")
+# EMAIL_USE_TLS = config("EMAIL_USE_TLS")
+EMAIL_USE_SSL = config("EMAIL_USE_SSL")
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 
 # Sitemap
 SITE_ID = 1
