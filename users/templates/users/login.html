@@ -9,7 +9,7 @@
                 <div class="breadcrumb-wrapper">
                     <h2 class="product-title">My Account</h2>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="ti-home"></i> Home</a></li>
+                        <li><a href="{% url 'jobs:home' %}"><i class="ti-home"></i> Home</a></li>
                         <li class="current">My Account</li>
                     </ol>
                 </div>
@@ -41,28 +41,13 @@
                                             <input name="rememberme" id="rememberme" value="forever" type="checkbox">
                                             Remember Me</label>
                                     </div>
-                                    <p class="cd-form-bottom-message"><a href="#0">Lost your password?</a></p>
+                                    <p class="cd-form-bottom-message"><a href="{% url 'password_reset' %}">Lost your
+                                            password?</a></p>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <div class="page-login-form" id="cd-reset-password">
-                        <p class="cd-form-message">Lost your password? Please enter your email address. You will receive
-                            a link to create a new password.</p>
-                        <form class="cd-form">
-                            <div class="form-group">
-                                <div class="input-icon">
-                                    <i class="ti-email"></i>
-                                    <input type="text" id="sender-email" class="form-control" name="email"
-                                        placeholder="Email">
-                                </div>
-                            </div>
-                            <p class="fieldset">
-                                <button class="btn btn-common log-btn" type="submit">Reset password</button>
-                            </p>
-                        </form>
-                        <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
-                    </div>
+
                 </div>
             </div>
         </div>

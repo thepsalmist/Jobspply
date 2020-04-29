@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_pic = models.ImageField(
-        default="default.jpg", blank=True, null=True, upload_to="Profiles"
+        default="./media/Author.jpg", blank=True, null=True, upload_to="Profiles"
     )
     bio = models.TextField(blank=True, null=True)
     work_title = models.CharField(max_length=100, blank=True, null=True)
@@ -25,4 +25,3 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.message} from {self.name}"
-
