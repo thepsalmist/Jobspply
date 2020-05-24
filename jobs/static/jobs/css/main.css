@@ -2269,7 +2269,8 @@ footer {
 }
 .job-detail .text-box a {
   text-align: center;
-  margin-left: 25px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .job-detail .sidebar .thumb {
   width: 100%;
