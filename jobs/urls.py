@@ -14,4 +14,3 @@ urlpatterns = [
     path("job/<slug:slug>/", views.job_detail, name="job_detail"),
     path("category/<query>/", views.jobs_by_category, name="jobs_by_category"),
 ]
-
