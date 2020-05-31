@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     "warehouse.apps.WarehouseConfig",
     "jobs.apps.JobsConfig",
     "career.apps.CareerConfig",
+    "courses.apps.CoursesConfig",
     "marketing.apps.MarketingConfig",
     "resume.apps.ResumeConfig",
     "core.apps.CoreConfig",
