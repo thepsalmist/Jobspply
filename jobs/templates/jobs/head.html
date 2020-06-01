@@ -28,36 +28,13 @@
                                     Categories
                                 </a>
                                 <ul class="dropdown">
+                                    {% for cat in category %}
                                     <li>
-                                        <a href="{%url 'jobs:jobs_by_category' query='advertising' %}">
-                                            Advertising
+                                        <a href="{%url 'jobs:jobs_by_category' query='{{cat}}' %}">
+                                            {{cat}}
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="{%url 'jobs:jobs_by_category' query='aviation' %}">
-                                            Aviation
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{%url 'jobs:jobs_by_category' query='banking' %}">
-                                            Banking
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{%url 'jobs:jobs_by_category' query='education' %}">
-                                            Education
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{%url 'jobs:jobs_by_category' query='engineering' %}">
-                                            Engineering
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{%url 'jobs:jobs_by_category' query='government' %}">
-                                            Government
-                                        </a>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </li>
                             <li class="extra">
@@ -101,36 +78,13 @@
                     <li>
                         <a href="{% url 'jobs:categories' %}">Categories</a>
                         <ul>
+                            {% for cat in category %}
                             <li>
-                                <a class="active" href="{%url 'jobs:jobs_by_category' query='advertising' %}">
-                                    Advertising
+                                <a class="active" href="{%url 'jobs:jobs_by_category' query='{{cat}}' %}">
+                                    {{cat}}
                                 </a>
                             </li>
-                            <li>
-                                <a href="{%url 'jobs:jobs_by_category' query='aviation' %}">
-                                    Aviation
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{%url 'jobs:jobs_by_category' query='banking' %}">
-                                    Banking
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{%url 'jobs:jobs_by_category' query='education' %}">
-                                    Education
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{%url 'jobs:jobs_by_category' query='engineering' %}">
-                                    Engineering
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{%url 'jobs:jobs_by_category' query='government' %}">
-                                    Government
-                                </a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </li>
                     <li>
