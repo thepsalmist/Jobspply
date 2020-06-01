@@ -30,7 +30,7 @@
                                 <ul class="dropdown">
                                     {% for cat in category %}
                                     <li>
-                                        <a href="{%url 'jobs:jobs_by_category' query='{{cat}}' %}">
+                                        <a href="{%url 'jobs:jobs_by_category' query=cat %}">
                                             {{cat}}
                                         </a>
                                     </li>
@@ -80,7 +80,7 @@
                         <ul>
                             {% for cat in category %}
                             <li>
-                                <a class="active" href="{%url 'jobs:jobs_by_category' query='{{cat}}' %}">
+                                <a class="active" href="{%url 'jobs:jobs_by_category' query=cat %}">
                                     {{cat}}
                                 </a>
                             </li>
