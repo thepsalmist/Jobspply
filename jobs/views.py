@@ -24,7 +24,7 @@ def home(request):
     jobs = Job.objects.all()
     latest_posts = Post.objects.order_by("-publish")[:3]
     category = get_category()
-    paginator = Paginator(jobs, 8)
+    paginator = Paginator(jobs, 9)
     page = request.GET.get("page")
     s_form = SignUpForm()
 
