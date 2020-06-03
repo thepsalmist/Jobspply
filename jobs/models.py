@@ -11,6 +11,7 @@ class Job(models.Model):
     slug = models.SlugField(max_length=200, blank=True)
     description = models.TextField()
     body = HTMLField()
+    apply = HTMLField(blank=True, null=True)
     category = models.CharField(max_length=100)
     job_url = models.URLField()
     thumbnail = models.URLField(blank=True, null=True)
