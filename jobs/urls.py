@@ -3,6 +3,7 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
 
 from . import views
+from .feeds import LatestJobsFeed
 
 app_name = "jobs"
 
@@ -17,4 +18,5 @@ urlpatterns = [
     path("job/<slug:slug>/", views.job_detail, name="job_detail"),
     path("category/<query>/", views.jobs_by_category, name="jobs_by_category"),
     path("ads.txt", RedirectView.as_view(url=staticfiles_storage.url("ads.txt"))),
+    path("feed/", LatestJobsFeed(), name="job_feed"),
 ]
