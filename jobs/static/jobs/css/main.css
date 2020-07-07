@@ -1963,6 +1963,11 @@ footer {
   padding: 30px;
   margin-bottom: 30px
 }
+.inner-box-coffee{
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
 .categories-list ul {
   margin: 0
