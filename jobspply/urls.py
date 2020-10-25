@@ -19,10 +19,11 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
-from jobs.sitemaps import JobSitemap
+from jobs.sitemaps import JobSitemap, StaticSitemap
 from users import views as user_views
 
 sitemaps = {
+    "static": StaticSitemap,
     "jobs": JobSitemap,
 }
 
@@ -79,8 +80,10 @@ urlpatterns = [
         {"sitemaps": sitemaps},
         name="django.contrib.sitemaps.views.sitemap",
     ),
+    # REST_FRAMEWORK URLS
     path("api-auth/", include("rest_framework.urls")),
     path("api/jobs/", include("jobs.api.urls", namespace="jobs_api")),
+    path("api/users/", include("users.api.urls", namespace="users_api")),
 ]
 
 if settings.DEBUG:

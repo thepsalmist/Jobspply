@@ -2,5 +2,5 @@ from rest_framework.pagination import LimitOffsetPagination, PageNumberPaginatio
 
 
 class JobPageNumberPagination(PageNumberPagination):
-    page_size = 6
+    page_size = 11
 

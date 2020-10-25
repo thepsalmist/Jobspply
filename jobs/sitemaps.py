@@ -1,4 +1,5 @@
 from django.contrib.sitemaps import Sitemap
+from django.urls import reverse
 from .models import Job
 
 
@@ -11,3 +12,18 @@ class JobSitemap(Sitemap):
 
     def lastmod(self, obj):
         return obj.updated
+
+
+class StaticSitemap(Sitemap):
+    def items(self):
+        return [
+            "career:home",
+            "resume:home",
+            "courses:home",
+            "jobs:categories",
+            "jobs:about",
+            "jobs:contact",
+        ]
+
+    def location(self, item):
+        return reverse(item)
