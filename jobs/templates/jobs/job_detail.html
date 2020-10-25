@@ -5,7 +5,24 @@
 {% endblock %}
 
 {% block meta %}{{job.description}} {% endblock %}
-{% block title%} JobsearchKE | {{job.title}} {% endblock %}
+
+{% block ogdesc %}
+{{job.description}}
+{% endblock %}
+
+{% block ogtitle %}
+{{job.title}}| JobsearchKE
+{% endblock %}
+
+{% block ogurl %}
+{{job.get_absolute_url}}
+{% endblock %}
+
+{% block ogimg %}
+https://jobsearchke.com{{job.image.url}}
+{% endblock %}
+
+{% block title%}{{job.title}}| JobsearchKE {% endblock %}
 
 {% block content %}
 {% include "jobs/head.html" %}

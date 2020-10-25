@@ -2,6 +2,7 @@ from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from .models import Profile
+from marketing.models import SignUp
 
 
 @receiver(post_save, sender=User)
@@ -14,3 +15,8 @@ def create_profile(sender, instance, created, **kwargs):
 def save_profile(sender, instance, **kwargs):
     instance.profile.save()
 
+
+@receiver(post_save, sender=User)
+def subscribe_user(sende, instance, created, **kwargs):
+    if created:
+        SignUp.objects.create(email=instance.email)

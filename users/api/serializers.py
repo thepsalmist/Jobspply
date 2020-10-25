@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from rest_framework.serializers import ModelSerializer, CharField
+from rest_framework.serializers import ModelSerializer, CharField, EmailField
 
 
 class UserCreateSerializer(ModelSerializer):
@@ -40,11 +40,9 @@ class UserCreateSerializer(ModelSerializer):
 
 
 class UserLoginSerializer(ModelSerializer):
-    token = CharField(read_only=True)
+    token = CharField(allow_blank=True, read_only=True)
     username = CharField()
-    password1 = CharField(
-        label="Password", style={"input_type": "password"}, write_only=True
-    )
+    email = EmailField(label="Email Address")
 
     class Meta:
         model = User
@@ -53,3 +51,4 @@ class UserLoginSerializer(ModelSerializer):
             "password1",
             "token",
         ]
+        extra_kwargs = {"password1": {"write_only": True}}
