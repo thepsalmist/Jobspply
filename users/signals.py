@@ -17,6 +17,6 @@ def save_profile(sender, instance, **kwargs):
 
 
 @receiver(post_save, sender=User)
-def subscribe_user(sende, instance, created, **kwargs):
+def subscribe_user(sender, instance, created, **kwargs):
     if created:
         SignUp.objects.create(email=instance.email)
