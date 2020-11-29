@@ -4,23 +4,22 @@
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {% endblock %}
 
-{% block meta %} Latest Jobs in Kenya | JobsearchKE
+{% block meta %} Find the latest {{query}} jobs in Kenya 2020. Signup and apply for the current {{query}} job vaccancies in leading companies. Visit our career page and courses to enhance your career | JobsearchKE
 {% endblock %}
 
 {% block ogdesc %}
-JobsearchKE provides you with the latest job opportunities in Kenya 2020. Sign Up to our platform to
-receive updates on the latest vaccancies, top resume templates and career advice
+Find the latest {{query}} jobs in Kenya 2020. Signup and apply for the current {{query}} job vaccancies in leading companies. Visit our career page and courses to enhance your career | JobsearchKE
 {% endblock %}
 
 {% block ogtitle %}
-Latest Jobs in Kenya | JobsearchKE
+{{query|capfirst}} Jobs in Kenya - Latest {{query}} job vaccancies | JobsearchKE
 {% endblock %}
 
 {% block ogimg %}
 
 {% endblock %}
 
-{% block title %} Jobs | JobsearchKE {% endblock %}
+{% block title %} {{query|capfirst}} Jobs in Kenya - Latest {{query}} job vaccancies | JobsearchKE {% endblock %}
 
 {% block content %}
 {% include "jobs/head.html" %}

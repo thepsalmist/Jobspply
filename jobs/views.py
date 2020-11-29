@@ -107,6 +107,7 @@ def jobs_by_category(request, query=None):
         queryset = paginator.page(paginator.num_pages)
 
     context = {
+        "query": query,
         "jobs": jobs,
         "queryset": queryset,
         "category": category,
