@@ -957,6 +957,14 @@ nav#menu span.fa.fa-bars:hover {
   text-transform: capitalize;
   margin-bottom: 15px
 }
+/* Banner Ad */
+.banner-ad{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.banner-ad a{
+  padding-bottom: 20px;
+}
 
 #search-row-wrapper {
   background: url(../img/bg/counter-bg.jpg) center center no-repeat;
@@ -1955,6 +1963,11 @@ footer {
   padding: 30px;
   margin-bottom: 30px
 }
+.inner-box-coffee{
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
 .categories-list ul {
   margin: 0
@@ -2259,20 +2272,24 @@ footer {
   margin-right: 5px;
   color: #67900B
 }
-
+.job-detail .text-box a {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 .job-detail .sidebar .thumb {
   width: 100%;
   position: relative;
   border-radius: 4px;
   margin-bottom: 20px
 }
-
 .job-detail .sidebar .text-box h4 {
   margin: 0 0 12px
 }
 
 .job-detail .sidebar .text-box h4 a {
-  color: #67900B
+  color: #67900B;
+  
 }
 
 .job-detail .sidebar .text-box p {
@@ -2646,7 +2663,14 @@ footer {
 .my-resume .author-resume .author-info .social-link {
   margin-top: 5px
 }
-
+.my-resume .author-resume .author-info button{
+  margin-top: 20px;
+  padding-top: 5px;
+  color: #000000;
+  background: #67900b;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 .my-resume .skill {
   margin-top: 30px
 }
@@ -3836,9 +3860,9 @@ blockquote p a:hover {
   }
 }
 
-#cd-login, #cd-signup, #cd-reset-password {
-  display: none
-}
+/* #cd-login, #cd-signup, #cd-reset-password {
+
+} */
 
 #cd-login.is-selected, #cd-signup.is-selected, #cd-reset-password.is-selected {
   display: block
