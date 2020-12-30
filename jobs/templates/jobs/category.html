@@ -4,11 +4,13 @@
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {% endblock %}
 
-{% block meta %} Find the latest {{query}} jobs in Kenya 2020. Signup and apply for the current {{query}} job vaccancies in leading companies. Visit our career page and courses to enhance your career | JobsearchKE
+{% block meta %} Find the latest {{query}} jobs in Kenya 2021. Signup and apply for the current {{query}} job vaccancies
+in leading companies. Visit our career page and courses to enhance your career | JobsearchKE
 {% endblock %}
 
 {% block ogdesc %}
-Find the latest {{query}} jobs in Kenya 2020. Signup and apply for the current {{query}} job vaccancies in leading companies. Visit our career page and courses to enhance your career | JobsearchKE
+Find the latest {{query}} jobs in Kenya 2021. Signup and apply for the current {{query}} job vaccancies in leading
+companies. Visit our career page and courses to enhance your career | JobsearchKE
 {% endblock %}
 
 {% block ogtitle %}
@@ -99,15 +101,15 @@ Find the latest {{query}} jobs in Kenya 2020. Signup and apply for the current {
                     {% for num in queryset.paginator.page_range %}
                     {% if queryset.number == num %}
                     <li><a href="#" class="active">{{num}}</a></li>
-                    {% elif num > queryset.number|add:'-2' and num < queryset.number|add:'2' %}
-                    <li><a href="?page={{num}}">{{num}}</a></li>
-                    {% endif %}
-                    {% endfor %}
+                    {% elif num > queryset.number|add:'-2' and num < queryset.number|add:'2' %} <li><a
+                            href="?page={{num}}">{{num}}</a></li>
+                        {% endif %}
+                        {% endfor %}
 
-                    {% if queryset.has_next %}
-                    <li class="active"><a href="?page={{queryset.next_page_number}}" class="btn btn-common">Next</a>
-                    </li>
-                    {% endif %}
+                        {% if queryset.has_next %}
+                        <li class="active"><a href="?page={{queryset.next_page_number}}" class="btn btn-common">Next</a>
+                        </li>
+                        {% endif %}
                 </ul>
 
             </div>

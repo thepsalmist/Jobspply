@@ -1,4 +1,8 @@
 {% extends "jobs/base.html" %}
+{% block ads %}
+<script data-ad-client="ca-pub-1810260271665361" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{% endblock %}
 
 {% block meta %}{{post.description}} {% endblock %}
 {% block title%} JobsearchKE|Career Blog|{{post.title}} {% endblock %}
@@ -44,9 +48,9 @@
                     <div>
                         <p>{{post.body|safe}}</p>
                     </div>
-<hr>
+                    <hr>
 
-                    
+
                 </div>
 
             </div>

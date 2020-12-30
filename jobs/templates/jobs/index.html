@@ -7,28 +7,32 @@
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {% endblock %}
 
-{% block meta %} Jobs in Kenya 2020 - JobsearchKE provides the latest job vaccancies in Kenya 2020. Signup and get updates on ngo jobs, government jobs and part time jobs in Kenya. Visit our career page and courses to enhance your career
+{% block meta %} Jobs in Kenya 2021 - JobsearchKE provides the latest job vaccancies in Kenya 2021. Signup and get
+updates on ngo jobs, government jobs and part time jobs in Kenya. Visit our career page and courses to enhance your
+career
 {% endblock %}
 
 {% block ogdesc %}
-Jobs in Kenya 2020 - Jobs in Kenya 2020 - JobsearchKE provides the latest job vaccancies in Kenya 2020. Signup and get updates on ngo jobs, government jobs and part time jobs in Kenya. Visit our career page and courses to enhance your career
+Jobs in Kenya 2021 - Jobs in Kenya 2021 - JobsearchKE provides the latest job vaccancies in Kenya 2021. Signup and get
+updates on ngo jobs, government jobs and part time jobs in Kenya. Visit our career page and courses to enhance your
+career
 {% endblock %}
 
-{% block ogtitle %}Jobs in Kenya 2020 - Job Vaccancies in Kenya 2020 | JobsearchKE{% endblock %}
+{% block ogtitle %}Jobs in Kenya 2021 - Job Vaccancies in Kenya 2021 | JobsearchKE{% endblock %}
 
 {% block ogurl %}
 https://jobsearchke.com
 {% endblock %}
 {% block ogimg %}https://jobsearchke.com{% static 'jobs/img/lala.png' %}{% endblock %}
 
-{% block title%}Jobs in Kenya 2020 - Job Vaccancies in Kenya 2020 | JobsearchKE{% endblock %}
+{% block title%}Jobs in Kenya 2021 - Job Vaccancies in Kenya 2021 | JobsearchKE{% endblock %}
 
 {% block content %}
 {% include "jobs/navbar.html" %}
 
 <section class="find-job section">
     <div class="container">
-        <h2 class="section-title">Latest Jobs in Kenya 2020</h2>
+        <h2 class="section-title">Latest Jobs in Kenya 2021</h2>
         <div class="row">
             <div class="col-md-9 col-sm-8">
                 {% for job in jobs %}
@@ -110,16 +114,16 @@ https://jobsearchke.com
                         {% for num in jobs.paginator.page_range %}
                         {% if jobs.number == num %}
                         <li><a href="#" class="active">{{num}}</a></li>
-                        {% elif num > jobs.number|add:'-2' and num < jobs.number|add:'2'%}
-                        <li><a href="?page={{num}}">{{num}}</a></li>
-                        {% endif %}
-                        {% endfor %}
+                        {% elif num > jobs.number|add:'-2' and num < jobs.number|add:'2'%} <li><a
+                                href="?page={{num}}">{{num}}</a></li>
+                            {% endif %}
+                            {% endfor %}
 
-                        {% if jobs.has_next %}
-                        <li class="active"><a href="?page={{jobs.next_page_number}}" class="btn btn-common">Next <i
-                                    class="ti-angle-right"></i></a>
-                        </li>
-                        {% endif %}
+                            {% if jobs.has_next %}
+                            <li class="active"><a href="?page={{jobs.next_page_number}}" class="btn btn-common">Next <i
+                                        class="ti-angle-right"></i></a>
+                            </li>
+                            {% endif %}
                     </ul>
                 </div>
             </div>
