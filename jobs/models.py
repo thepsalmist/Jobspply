@@ -6,7 +6,16 @@ from django.db.models.signals import pre_save
 from jobspply.utils import slug_generator
 
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super(PublishedManager, self).get_queryset().filter(status="published")
+
+
 class Job(models.Model):
+    STATUS_CHOICES = (
+        ("draft", "Draft"),
+        ("pulished", "Published"),
+    )
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=200, blank=True)
     description = models.TextField()
@@ -20,6 +29,8 @@ class Job(models.Model):
     )
     publish = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="draft")
+    # published = PublishedManager()
 
     class Meta:
         ordering = ("-publish",)
