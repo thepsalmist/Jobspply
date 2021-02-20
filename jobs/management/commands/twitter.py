@@ -1,5 +1,7 @@
-import datetime
-from datetime.date import today
+from datetime import datetime
+from datetime import timedelta
+import pytz
+import time
 import tweepy
 from decouple import config
 from jobs.models import Job
@@ -40,24 +42,23 @@ def get_trending():
 
 
 def post_tweets():
-    tdy = today.strftime("%y-%m-%d")
-    jobs = Job.objects.all()
-    for job in jobs:
-        published = job.publish.today().strftime("%y-%m-%d")
-
     api = tweepy.API(twitter_auth())
     mylist = get_trending()
-    job = (
-        "Lab Technician Job Kenya (50-65K) - Dairy Company"
-        + " https://jobsearchke.com/job/lab-technician-job-kenya-50-65k-dairy-company/ "
-    )
-    api.update_status(
-        status="#IkoKaziKE Check out this job opportunity \n {} {} {} {} {} {}".format(
-            job, mylist[0], mylist[1], mylist[2], mylist[3], mylist[4]
+
+    now = datetime.now(tz=pytz.UTC)
+    one_hour_ago = now - timedelta(hours=1)
+    jobs = Job.objects.filter(publish__gte=one_hour_ago)
+    for job in jobs:
+        job_title = job.title
+        job_description = job.description
+        job_slug = job.slug
+        job_url = "https://jobsearchke.com/job/" + job_slug
+
+        job = job_title + " " + str(job_url)
+
+        api.update_status(
+            status="#IkoKaziKE Check out this job opportunity \n {} {} {} {} {} {}".format(
+                job, mylist[0], mylist[1], mylist[2], mylist[3], mylist[4]
+            )
         )
-    )
-
-
-# publish__gte=2021-01-23+00%3A00%3A00%2B00%3A00&publish__lt=2021-01-24+00%3A00%3A00%2B00%3A00
-
-# publish__gte=2021-01-25+00%3A00%3A00%2B00%3A00&publish__lt=2021-01-26+00%3A00%3A00%2B00%3A00
+        time.sleep(30)
