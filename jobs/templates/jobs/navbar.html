@@ -28,10 +28,10 @@
                                     Categories
                                 </a>
                                 <ul class="dropdown">
-                                    {% for cat in category %}
+                                    {% for cat in categories %}
                                     <li>
-                                        <a href="{%url 'jobs:jobs_by_category' query=cat %}">
-                                            {{cat}}
+                                        <a href="{%url 'jobs:jobs_by_category' slug=cat.slug %}">
+                                            {{cat.title|capfirst}}
                                         </a>
                                     </li>
                                     {% endfor %}
@@ -78,10 +78,10 @@
                     <li>
                         <a href="{% url 'jobs:categories' %}">Categories</a>
                         <ul>
-                            {% for cat in category %}
+                            {% for cat in categories %}
                             <li>
-                                <a href="{%url 'jobs:jobs_by_category' query=cat %}">
-                                    {{cat}}
+                                <a href="{%url 'jobs:jobs_by_category' slug=cat.slug %}">
+                                    {{cat.title}}
                                 </a>
                             </li>
                             {% endfor %}

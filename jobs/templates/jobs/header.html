@@ -19,8 +19,8 @@
                                     <label class="styled-select">
                                         <select class="dropdown-product selectpicker" name="choice">
                                             <option>All Categories</option>
-                                            {% for cat in category %}
-                                            <option value="{{cat}}">{{cat}}</option>
+                                            {% for cat in categories %}
+                                            <option value="{{cat.title}}">{{cat.title|capfirst}}</option>
                                             {% endfor %}
 
                                         </select>

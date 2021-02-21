@@ -38,6 +38,14 @@ class Category(models.Model):
         ("education & teaching", "Education/Teaching"),
         ("media & social_media", "Media/Social_Media"),
         ("healthcare & medical", "Healthcare/Medical"),
+        ("banking & insurance", "Banking/Insurance"),
+        ("logistics & procurement", "Logistics/Procurement"),
+        ("internship", "Internship"),
+        ("hotels & hospitality", "Hotels/Hospitality"),
+        ("government & parastatals", "Government/Parastatals"),
+        ("management", "Management"),
+        ("data science", "Data Science"),
+        ("hr & admin assistant", "HR/Admin Assistant"),
     )
     title = models.CharField(choices=CATEGORY_CHOICES, max_length=256)
     slug = models.SlugField(max_length=256, blank=True)
