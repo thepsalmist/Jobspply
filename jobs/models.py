@@ -22,6 +22,33 @@ class Company(models.Model):
         return self.name
 
 
+class Category(models.Model):
+    CATEGORY_CHOICES = (
+        ("sales/marketing", "Sales/Marketting"),
+        ("accounting/finance", "Accounting/Finance"),
+        ("software/engineering", "Software/Engineering"),
+        ("ict/telecommunications", "ICT/Telecommunications"),
+        ("manufacturing/production", "Manufacturing/Production"),
+        ("ngo", "NGO"),
+        ("education/teaching", "Education/Teaching"),
+        ("media/social_media", "Media/Social_Media"),
+        ("healthcare/medical", "Healthcare/Medical"),
+    )
+    title = models.CharField(choices=CATEGORY_CHOICES, max_length=256)
+    slug = models.SlugField(max_length=256, blank=True)
+
+    def __str__(self):
+        return self.title
+
+
+def slug_save(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = slug_generator(instance, instance.title, instance.slug)
+
+
+pre_save.connect(slug_save, sender=Category)
+
+
 class Job(models.Model):
     STATUS_CHOICES = (
         ("draft", "Draft"),
@@ -40,7 +67,7 @@ class Job(models.Model):
         ("eldoret", "Eldoret"),
         ("kakamega", "Kakamega"),
     )
-    company = models.ForeignKey(Company, null=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=200, blank=True)
     description = models.TextField()
@@ -48,9 +75,7 @@ class Job(models.Model):
     location = models.CharField(
         max_length=100, choices=LOCATION_CHOICES, default="nairobi", null=True
     )
-    salary = models.CharField(
-        help="30K", max_length=50, default="confidential", null=True
-    )
+    salary = models.CharField(max_length=50, default="confidential", null=True)
     employment_type = models.CharField(
         max_length=50, choices=EMPLOYMENT_CHOICES, default="fulltime", null=True
     )
