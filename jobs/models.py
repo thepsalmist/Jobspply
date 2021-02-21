@@ -29,15 +29,15 @@ class Company(models.Model):
 
 class Category(models.Model):
     CATEGORY_CHOICES = (
-        ("sales/marketing", "Sales/Marketting"),
-        ("accounting/finance", "Accounting/Finance"),
-        ("software/engineering", "Software/Engineering"),
-        ("ict/telecommunications", "ICT/Telecommunications"),
-        ("manufacturing/production", "Manufacturing/Production"),
+        ("sales & marketing", "Sales/Marketting"),
+        ("accounting & finance", "Accounting/Finance"),
+        ("software engineering", "Software/Engineering"),
+        ("ict & telecommunications", "ICT/Telecommunications"),
+        ("manufacturing & production", "Manufacturing/Production"),
         ("ngo", "NGO"),
-        ("education/teaching", "Education/Teaching"),
-        ("media/social_media", "Media/Social_Media"),
-        ("healthcare/medical", "Healthcare/Medical"),
+        ("education & teaching", "Education/Teaching"),
+        ("media & social_media", "Media/Social_Media"),
+        ("healthcare & medical", "Healthcare/Medical"),
     )
     title = models.CharField(choices=CATEGORY_CHOICES, max_length=256)
     slug = models.SlugField(max_length=256, blank=True)

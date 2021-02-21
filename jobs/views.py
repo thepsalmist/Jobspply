@@ -81,9 +81,8 @@ def job_detail(request, slug):
     return render(request, "jobs/job_detail.html", context)
 
 
-def jobs_by_category(request, query=None):
-    jobs = Job.objects.all()
-    category = get_category()
+def jobs_by_category(request, slug):
+    jobs = Job.objects.filter(jobcategory=slug)
 
     # Newsletter Signup
     if request.method == "POST":
@@ -96,11 +95,11 @@ def jobs_by_category(request, query=None):
         s_form = SignUpForm()
 
     # Lookup
-    if query is not None:
-        lookup = Q(category__icontains=query)
-        queryset = jobs.filter(lookup).all()
+    # if query is not None:
+    #     lookup = Q(category__icontains=query)
+    #     queryset = jobs.filter(lookup).all()
 
-    paginator = Paginator(queryset, 6)
+    paginator = Paginator(jobs, 6)
     page = request.GET.get("page")
     try:
         queryset = paginator.page(page)
