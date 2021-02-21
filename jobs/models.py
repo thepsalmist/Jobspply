@@ -21,6 +21,11 @@ class Company(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ("name",)
+        verbose_name = "company"
+        verbose_name_plural = "companies"
+
 
 class Category(models.Model):
     CATEGORY_CHOICES = (
@@ -37,16 +42,16 @@ class Category(models.Model):
     title = models.CharField(choices=CATEGORY_CHOICES, max_length=256)
     slug = models.SlugField(max_length=256, blank=True)
 
+    class Meta:
+        ordering = ("title",)
+        verbose_name = "category"
+        verbose_name_plural = "categories"
+
     def __str__(self):
         return self.title
 
-
-def slug_save(sender, instance, *args, **kwargs):
-    if not instance.slug:
-        instance.slug = slug_generator(instance, instance.title, instance.slug)
-
-
-pre_save.connect(slug_save, sender=Category)
+    def get_absolute_url(self):
+        return reverse("jobs:jobs_by_category", args=[self.slug])
 
 
 class Job(models.Model):
@@ -71,7 +76,7 @@ class Job(models.Model):
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=200, blank=True)
     description = models.TextField()
-    category = models.CharField(max_length=100)
+    jobcategory = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     location = models.CharField(
         max_length=100, choices=LOCATION_CHOICES, default="nairobi", null=True
     )
@@ -79,8 +84,8 @@ class Job(models.Model):
     employment_type = models.CharField(
         max_length=50, choices=EMPLOYMENT_CHOICES, default="fulltime", null=True
     )
-    job_url = models.URLField()
-    thumbnail = models.URLField(blank=True, null=True)
+    job_url = models.URLField(default=SITE_URL)
+    # thumbnail = models.URLField(blank=True, null=True)
     # image = models.ImageField(
     #     default="logo.png", blank=True, null=True, upload_to="Logos %Y%M%d"
     # )
