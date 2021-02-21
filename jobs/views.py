@@ -21,7 +21,7 @@ from users.forms import ContactForm
 
 
 def home(request):
-    jobs = Job.objects.all()
+    jobs = Job.objects.filter(status="published")
     latest_posts = Post.objects.order_by("-publish")[:3]
     categories = Category.objects.all()
     companies = Company.objects.all()
@@ -59,9 +59,10 @@ def home(request):
 
 def job_detail(request, slug):
     job = get_object_or_404(Job, slug=slug)
-    similar_jobs = Job.objects.filter(category__icontains=job.category).exclude(
-        id=job.id
-    )[:4]
+    categories = Category.objects.all()
+    similar_jobs = Job.objects.filter(jobcategory=job.jobcategory).exclude(id=job.id)[
+        :4
+    ]
 
     # subscribing newsletter
     if request.method == "POST":
@@ -76,13 +77,15 @@ def job_detail(request, slug):
     context = {
         "job": job,
         "s_form": s_form,
+        "categories": categories,
         "similar_jobs": similar_jobs,
     }
     return render(request, "jobs/job_detail.html", context)
 
 
 def jobs_by_category(request, slug):
-    jobs = Job.objects.filter(jobcategory=slug)
+    category = Category.objects.filter(slug=slug).first()
+    jobs = Job.objects.filter(jobcategory=category)
 
     # Newsletter Signup
     if request.method == "POST":
@@ -109,7 +112,6 @@ def jobs_by_category(request, slug):
         queryset = paginator.page(paginator.num_pages)
 
     context = {
-        "query": query,
         "jobs": jobs,
         "queryset": queryset,
         "category": category,
@@ -121,14 +123,13 @@ def jobs_by_category(request, slug):
 def job_search(request):
     queryset = Job.objects.all()
     query = request.GET.get("q")
-    category = get_category()
     choice = request.GET.get("choice")
     if query != "" and query is not None:
         queryset = queryset.filter(
             Q(title__icontains=query) | Q(description__icontains=query)
         )
     if choice != "" and choice is not None and choice != "All Categories":
-        queryset = queryset.filter(category=choice)
+        queryset = queryset.filter(jobcategory=choice)
 
     paginator = Paginator(queryset, 6)
     page = request.GET.get("page")
@@ -142,7 +143,6 @@ def job_search(request):
     context = {
         "queryset": queryset,
         "query": query,
-        "category": category,
     }
     return render(request, "jobs/search.html", context)
 

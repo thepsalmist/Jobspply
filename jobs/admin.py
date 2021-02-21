@@ -4,7 +4,7 @@ from .models import Job, Company, Category
 
 @admin.register(Job)
 class JobAdmin(admin.ModelAdmin):
-    list_display = ["title", "publish", "jobcategory", "job_url", "slug", "status"]
+    list_display = ["title", "publish", "jobcategory", "expiry", "job_url", "status"]
     list_filter = ["status", "publish", "jobcategory"]
     search_fields = ["title", "description"]
     ordering = ["-publish"]

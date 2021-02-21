@@ -57,7 +57,7 @@ class Category(models.Model):
 class Job(models.Model):
     STATUS_CHOICES = (
         ("draft", "Draft"),
-        ("pulished", "Published"),
+        ("published", "Published"),
     )
     EMPLOYMENT_CHOICES = (
         ("contract", "Contract"),
