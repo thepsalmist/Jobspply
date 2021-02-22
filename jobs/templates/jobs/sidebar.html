@@ -55,7 +55,7 @@
                 <ul class="cat-list">
                     {% for cat in categories %}
                     <li>
-                        <a href="{%url 'jobs:jobs_by_category' slug=cat.slug %}">{{cat.title}}<span
+                        <a href="{%url 'jobs:jobs_by_category' slug=cat.slug %}">{{cat.title|capfirst}}<span
                                 class="num-posts"></span></span></a>
 
                     </li>
