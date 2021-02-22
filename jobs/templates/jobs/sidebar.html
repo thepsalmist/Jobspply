@@ -53,9 +53,9 @@
             <div class="inner-box">
                 <h3>Categories</h3>
                 <ul class="cat-list">
-                    {% for cat in category %}
+                    {% for cat in categories %}
                     <li>
-                        <a href="{%url 'jobs:jobs_by_category' query=cat %}">{{cat}}<span
+                        <a href="{%url 'jobs:jobs_by_category' slug=cat.slug %}">{{cat.title|capfirst}}<span
                                 class="num-posts"></span></span></a>
 
                     </li>

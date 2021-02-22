@@ -16,7 +16,7 @@ urlpatterns = [
     path("privacy/", views.privacy, name="privacy"),
     path("terms_of_service/", views.terms_of_service, name="terms_of_service"),
     path("job/<slug:slug>/", views.job_detail, name="job_detail"),
-    path("category/<query>/", views.jobs_by_category, name="jobs_by_category"),
+    path("category/<slug:slug>/", views.jobs_by_category, name="jobs_by_category"),
     path("ads.txt", RedirectView.as_view(url=staticfiles_storage.url("ads.txt"))),
     path("feed/", LatestJobsFeed(), name="job_feed"),
 ]

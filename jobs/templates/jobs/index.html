@@ -79,20 +79,20 @@ https://jobsearchke.com
                 {% endif %} -->
                 <div class="job-list">
                     <div class="thumb">
-                        <a href="{{job.get_absolute_url}}"><img src="{{job.image.url}}" loading="lazy"
+                        <a href="{{job.get_absolute_url}}"><img src="{{job.company.logo.url}}" loading="lazy"
                                 alt="{{job.title}}"></a>
                     </div>
                     <div class="job-list-content">
                         <h4><a href="{{job.get_absolute_url}}">{{job.title}}</a>
                         </h4>
-                        <p>{{job.description}}
+                        <p>{{job.company.description}}
                         </p>
                         <div class="job-tag">
                             <div class="pull-left">
                                 <div class="meta-tag">
                                     <span><a href="#">
-                                            <i class="fas fa-paint-brush"></i>{{job.category}}</a></span>
-                                    <span><i class="fas fa-map-marker-alt"></i>Nairobi, Kenya</span>
+                                            <i class="fas fa-paint-brush"></i>{{job.jobcategory.title}}</a></span>
+                                    <span><i class="fas fa-map-marker-alt"></i>{{job.location}}</span>
                                     <span><i class="fas fa-calendar-day"></i>{{job.publish|date:"M/d/Y"}}</span>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@ https://jobsearchke.com
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="{%url 'jobs:jobs_by_category' query='advertising' %}">
+                    <a href="{%url 'jobs:jobs_by_category' slug='advertising' %}">
                         <div class=" icon">
                             <i class="fab fa-adversal"></i>
                         </div>
@@ -146,7 +146,7 @@ https://jobsearchke.com
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="{%url 'jobs:jobs_by_category' query='sales' %}">
+                    <a href="{%url 'jobs:jobs_by_category' slug='sales-marketing' %}">
                         <div class="icon">
                             <i class="fas fa-globe"></i>
                         </div>
@@ -155,7 +155,7 @@ https://jobsearchke.com
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="{%url 'jobs:jobs_by_category' query='education' %}">
+                    <a href="{%url 'jobs:jobs_by_category' slug='education-teaching' %}">
                         <div class="icon">
                             <i class="fas fa-book"></i>
                         </div>
@@ -164,25 +164,25 @@ https://jobsearchke.com
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="{%url 'jobs:jobs_by_category' query='engineering' %}">
+                    <a href="{%url 'jobs:jobs_by_category' slug='ict-telecommunications' %}">
                         <div class="icon">
                             <i class="fas fa-desktop"></i>
                         </div>
-                        <h3>ICT/Engineering</h3>
+                        <h3>ICT/Telecommunications</h3>
                         <p>5100 jobs</p>
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="{%url 'jobs:jobs_by_category' query='banking' %}">
+                    <a href="{%url 'jobs:jobs_by_category' slug='healthcare-medical' %}">
                         <div class="icon">
                             <i class="fas fa-home"></i>
                         </div>
-                        <h3>Banking</h3>
+                        <h3>Healthcare/Medical</h3>
                         <p>5079 jobs</p>
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="{%url 'jobs:jobs_by_category' query='government' %}">
+                    <a href="{%url 'jobs:jobs_by_category' slug='government' %}">
                         <div class="icon">
                             <i class="fas fa-heart"></i>
                         </div>
@@ -191,16 +191,16 @@ https://jobsearchke.com
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="{%url 'jobs:jobs_by_category' query='manufacturing' %}">
+                    <a href="{%url 'jobs:jobs_by_category' slug='manufacturing-production' %}">
                         <div class="icon">
                             <i class="fas fa-industry"></i>
                         </div>
-                        <h3>Manufacturing</h3>
+                        <h3>Manufacturing/Production</h3>
                         <p>1800 jobs</p>
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="{%url 'jobs:jobs_by_category' query='ngo' %}">
+                    <a href="{%url 'jobs:jobs_by_category' slug='ngo' %}">
                         <div class="icon">
                             <i class="fas fa-hand-holding-heart"></i>
                         </div>
