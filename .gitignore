@@ -126,3 +126,4 @@ dmypy.json
 #csv file
 .csv
 media
+static
