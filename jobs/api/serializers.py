@@ -9,7 +9,7 @@ class JobListSerializer(ModelSerializer):
             "title",
             "slug",
             "description",
-            "category",
+            "jobcategory",
             "job_url",
             "thumbnail",
             "publish",
