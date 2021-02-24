@@ -8,10 +8,10 @@ class LatestJobsFeed(Feed):
     description = "Latest Job Opportunities in Kenya"
 
     def items(self):
-        return Job.published.all()[:20]
+        return Job.objects.all()[:25]
 
     def item_title(self, item):
         return item.title
 
     def item_description(self, item):
-        return item.description
+        return item.company.description
