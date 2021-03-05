@@ -1,0 +1,68 @@
+{% extends "jobs/base.html" %}
+
+
+{% block ads %}
+<script data-ad-client="ca-pub-1810260271665361" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{% endblock %}
+
+{% block meta %} Jobs in Kenya 2021 - JobsearchKE provides the latest job vaccancies in Kenya 2021. Signup and get
+updates on ngo jobs, government jobs and part time jobs in Kenya. Visit our career page and courses to enhance your
+career{% endblock %}
+
+{% block ogdesc %}
+Jobs in Kenya 2021 - JobsearchKE provides the latest job vaccancies in Kenya 2021. Signup and get updates on ngo jobs,
+government jobs and part time jobs in Kenya. Visit our career page and courses to enhance your career
+{% endblock %}
+{% block ogtitle %}
+Jobs in Kenya 2021 - Job Vaccancies in Kenya 2021 | JobsearchKE
+{% endblock %}
+{% block ogurl%}
+{%endblock %}
+{% block ogimg %}
+
+{% endblock %}
+
+{% block title %} Jobs in Kenya 2021 - Job Vaccancies in Kenya 2021 | JobsearchKE {% endblock %}
+
+{% block content %}
+{% include "jobs/head.html" %}
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-wrapper">
+                    <h2 class="product-title">Companies</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="ti-home"></i> Home</a></li>
+                        <li class="current">Browse Companies</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Jobs by Company</h2>
+        <div class="row">
+            <div class="col-md-12">
+                {% for company in companies %}
+                <div class="col-md-3 col-sm-3 col-xs-12 f-category">
+                    <a href="{%url 'jobs:jobs_by_company' slug=company.slug %}">
+                        <div class=" icon">
+                            <!-- <img src="{{company.logo.url}}" alt="JobsearchKE Jobs"> -->
+                        </div>
+                        <h3>{{ company.name | capfirst}}</h3>
+                        <p>{{jobs.count}} jobs</p>
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

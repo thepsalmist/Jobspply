@@ -3,9 +3,9 @@ from .models import Job
 
 
 class LatestJobsFeed(Feed):
-    title = "Jobsearchke Latest Jobs"
+    title = "Latest Jobs in Kenya 2021 | Jobsearchke"
     link = "/job/"
-    description = "Latest Job Opportunities in Kenya"
+    description = "Jobs in Kenya 2021 - JobsearchKE provides the latest job vaccancies in Kenya 2021. Signup and get updates on ngo jobs, government jobs and part time jobs in Kenya. Visit our career page and courses to enhance your career"
 
     def items(self):
         return Job.objects.all()[:25]
