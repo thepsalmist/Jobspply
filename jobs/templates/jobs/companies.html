@@ -52,11 +52,11 @@ Jobs in Kenya 2021 - Job Vaccancies in Kenya 2021 | JobsearchKE
                 {% for company in companies %}
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
                     <a href="{%url 'jobs:jobs_by_company' slug=company.slug %}">
-                        <div class=" icon">
-                            <!-- <img src="{{company.logo.url}}" alt="JobsearchKE Jobs"> -->
+                        <div>
+                            <img src="{{company.logo.url}}" alt="JobsearchKE Jobs">
                         </div>
                         <h3>{{ company.name | capfirst}}</h3>
-                        <p>{{jobs.count}} jobs</p>
+                        <p>{{company.job_set.count}} jobs</p>
                     </a>
                 </div>
                 {% endfor %}
