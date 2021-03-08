@@ -191,7 +191,13 @@ def all_companies(request):
 
 
 def all_categories(request):
-    return render(request, "jobs/categories.html", context={})
+    categories = Category.objects.all()
+    jobs = Job.objects.filter(status="published")
+    context = {
+        "categories": categories,
+        "jobs": jobs,
+    }
+    return render(request, "jobs/categories.html", context)
 
 
 def about(request):

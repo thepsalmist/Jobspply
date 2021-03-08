@@ -54,6 +54,7 @@ class Category(models.Model):
     )
     title = models.CharField(choices=CATEGORY_CHOICES, max_length=256)
     slug = models.SlugField(max_length=256, blank=True)
+    icon = models.CharField(max_length=50)
 
     class Meta:
         ordering = ("title",)
