@@ -46,7 +46,7 @@ def post_tweets():
     mylist = get_trending()
 
     now = datetime.now(tz=pytz.UTC)
-    one_hour_ago = now - timedelta(hours=1)
+    one_hour_ago = now - timedelta(hours=4)
     jobs = Job.objects.filter(publish__gte=one_hour_ago)
     for job in jobs:
         job_title = job.title

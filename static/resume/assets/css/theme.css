@@ -10090,7 +10090,7 @@ a.theme-link:hover {
 }
 
 .section {
-  padding-top: 4rem;
+  padding-top: 8rem;
   padding-bottom: 4rem
 }
 
@@ -10400,7 +10400,7 @@ a.theme-link:hover {
   .features-wrapper-reverse .features-content-box {
     margin-left: 0;
     margin-right: 240px;
-    padding-right: 280px;
+    padding-right: 80px;
     padding-left: 3rem
   }
 
@@ -10421,14 +10421,14 @@ a.theme-link:hover {
 
   .features-content-box {
     margin-left: 320px;
-    padding-left: 365px
+    padding-left: 120px
   }
 
   .features-wrapper-reverse .features-content-box {
     margin-left: 0;
     margin-right: 320px;
-    padding-right: 365px;
-    padding-left: 3rem
+    padding-right: 120px;
+    padding-left: 4rem
   }
 
   .features-wrapper-reverse .features-figure, .features-wrapper-reverse .features-carousel {
