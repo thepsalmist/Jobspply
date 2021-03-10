@@ -120,6 +120,20 @@ def jobs_by_category(request, slug):
     return render(request, "jobs/category.html", context)
 
 
+def jobs_by_company(request, slug):
+    companies = Company.objects.all()
+    company = companies.filter(slug=slug)[0]
+    jobs = Job.objects.filter(company=company)
+
+    context = {
+        "jobs": jobs,
+        "companies": companies,
+        "company": company,
+    }
+
+    return render(request, "jobs/company.html", context)
+
+
 def job_search(request):
     queryset = Job.objects.all()
     query = request.GET.get("q")
@@ -166,8 +180,24 @@ def contact(request):
     return render(request, "jobs/contact.html", context)
 
 
+def all_companies(request):
+    companies = Company.objects.all()
+    jobs = Job.objects.filter(status="published")
+    context = {
+        "companies": companies,
+        "jobs": jobs,
+    }
+    return render(request, "jobs/companies.html", context)
+
+
 def all_categories(request):
-    return render(request, "jobs/categories.html", context={})
+    categories = Category.objects.all()
+    jobs = Job.objects.filter(status="published")
+    context = {
+        "categories": categories,
+        "jobs": jobs,
+    }
+    return render(request, "jobs/categories.html", context)
 
 
 def about(request):

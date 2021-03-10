@@ -32,10 +32,10 @@ Jobs in Kenya 2021 - Job Vaccancies in Kenya 2021 | JobsearchKE
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb-wrapper">
-                    <h2 class="product-title">Categories</h2>
+                    <h2 class="product-title">Companies</h2>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="ti-home"></i> Home</a></li>
-                        <li class="current">Browse Categories</li>
+                        <li class="current">Browse Companies</li>
                     </ol>
                 </div>
             </div>
@@ -46,20 +46,21 @@ Jobs in Kenya 2021 - Job Vaccancies in Kenya 2021 | JobsearchKE
 
 <section class="section">
     <div class="container">
-        <h2 class="section-title">Jobs by Category</h2>
+        <h2 class="section-title">Jobs by Company</h2>
         <div class="row">
             <div class="col-md-12">
-                {% for category in categories %}
+                {% for company in companies %}
                 <div class="col-md-3 col-sm-3 col-xs-12 f-category">
-                    <a href="{%url 'jobs:jobs_by_category' slug=category.slug %}">
-                        <div class=" icon">
-                            <i class="fab fa-adversal"></i>
+                    <a href="{%url 'jobs:jobs_by_company' slug=company.slug %}">
+                        <div>
+                            <img src="{{company.logo.url}}" alt="JobsearchKE Jobs">
                         </div>
-                        <h3>{{category.title |capfirst }}</h3>
-                        <p>{{category.job_set.count}} jobs</p>
+                        <h3>{{ company.name | capfirst}}</h3>
+                        <p>{{company.job_set.count}} jobs</p>
                     </a>
                 </div>
                 {% endfor %}
+
             </div>
         </div>
     </div>

@@ -15,8 +15,11 @@ class PublishedManager(models.Manager):
 
 class Company(models.Model):
     name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=256, null=True)
     description = models.TextField()
     logo = models.ImageField(default="logo.png", upload_to="Company/Logos")
+    apply = HTMLField(blank=True, null=True)
+    # published = PublishedManager()
 
     def __str__(self):
         return self.name
@@ -46,9 +49,12 @@ class Category(models.Model):
         ("management", "Management"),
         ("data science", "Data Science"),
         ("hr & admin assistant", "HR/Admin Assistant"),
+        ("customer service", "Customer Service"),
+        ("engineering", "Engineering"),
     )
     title = models.CharField(choices=CATEGORY_CHOICES, max_length=256)
     slug = models.SlugField(max_length=256, blank=True)
+    icon = models.CharField(max_length=50)
 
     class Meta:
         ordering = ("title",)
