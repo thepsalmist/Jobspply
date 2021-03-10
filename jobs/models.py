@@ -110,7 +110,7 @@ class Job(models.Model):
         max_length=10, choices=STATUS_CHOICES, default="draft", null=True
     )
     body = HTMLField()
-    apply = HTMLField(blank=True, null=True)
+    # apply = HTMLField(blank=True, null=True)
     # published = PublishedManager()
 
     class Meta:
