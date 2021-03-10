@@ -19,7 +19,8 @@ https://jobsearchke.com{{job.get_absolute_url}}
 {% endblock %}
 
 {% block ogimg %}
-https://jobsearchke.com{{job.company.logo.url}}
+<!-- https://jobsearchke.com{{job.company.logo.url}} -->
+https://jobsearchke.com{% static 'jobs/img/jobs_2.png' %}
 {% endblock %}
 
 {% block title%}{{job.title}}| JobsearchKE {% endblock %}
