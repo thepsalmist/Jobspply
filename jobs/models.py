@@ -90,7 +90,8 @@ class Job(models.Model):
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=200, blank=True)
     description = models.TextField()
-    jobcategory = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+    jobcategory = models.ForeignKey(
+        Category, on_delete=models.CASCADE, null=True)
     location = models.CharField(
         max_length=100, choices=LOCATION_CHOICES, default="nairobi", null=True
     )
@@ -110,7 +111,7 @@ class Job(models.Model):
         max_length=10, choices=STATUS_CHOICES, default="draft", null=True
     )
     body = HTMLField()
-    # apply = HTMLField(blank=True, null=True)
+    apply = HTMLField(blank=True, null=True)
     # published = PublishedManager()
 
     class Meta:
