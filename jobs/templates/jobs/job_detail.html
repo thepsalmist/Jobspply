@@ -92,9 +92,15 @@ https://jobsearchke.com{{job.get_absolute_url}}
                         </div> -->
                         <div class="box">
                             <h4>How To Apply</h4>
+                            {% if job.company.apply %}
+                            <p>
+                                {{job.company.apply|safe}}
+                            </p>
+                            {% else %}
                             <p>
                                 {{job.apply|safe}}
                             </p>
+                            {% endif %}
                             <a href="{{job.job_url}}" class="btn btn-common">Apply for this Job Now</a>
                         </div>
                     </div>
