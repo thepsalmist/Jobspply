@@ -61,4 +61,4 @@ def post_tweets():
                 job, mylist[0], mylist[1], mylist[2], mylist[3], mylist[4]
             )
         )
-        time.sleep(30)
+        time.sleep(60)
