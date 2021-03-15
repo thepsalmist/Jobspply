@@ -3,7 +3,7 @@ import csv
 from django.core.management.base import BaseCommand
 from warehouse.models import Myjobmag
 from bs4 import BeautifulSoup
-from . import twitter
+from . import twitter, telegram
 
 
 class Command(BaseCommand):
