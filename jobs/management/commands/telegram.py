@@ -19,10 +19,10 @@ class Command(BaseCommand):
             access_token, parse_mode=None
         )  # You can set parse_mode by default. HTML or MARKDOWN
 
-        # now = datetime.now(tz=pytz.UTC)
-        # one_hour_ago = now - timedelta(hours=1)
-        # jobs = Job.objects.filter(publish__gte=one_hour_ago)
-        jobs = Job.objects.all()[:2]
+        now = datetime.now(tz=pytz.UTC)
+        one_hour_ago = now - timedelta(hours=3)
+        jobs = Job.objects.filter(publish__gte=one_hour_ago)
+
         for job in jobs:
             job_title = job.title
             job_description = job.description
