@@ -123,6 +123,10 @@ class Job(models.Model):
     def get_absolute_url(self):
         return reverse("jobs:job_detail", args=[self.slug])
 
+    def get_job_title(self):
+        res = self.company.name + " Jobs -" + " " + self.title
+        return res
+
     @property
     def structured_data(self):
         url = SITE_URL + self.get_absolute_url()
