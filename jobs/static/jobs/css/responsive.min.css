@@ -169,10 +169,10 @@
   .job-list .job-list-content {
     margin-left: 0;
   }
-  .job-list .job-list-content h2 {
+  /* .job-list .job-list-content h2 {
     font-size: 16px;
     line-height: 28px;
-  }
+  } */
   .job-list .job-list-content h4 {
     font-size: 16px;
     line-height: 28px;
