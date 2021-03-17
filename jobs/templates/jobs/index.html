@@ -7,32 +7,32 @@
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {% endblock %}
 
-{% block meta %} Jobs in Kenya 2021 - JobsearchKE provides the latest job vaccancies in Kenya 2021. Signup and get
+{% block meta %} Jobs in Kenya 2021 - JobsearchKE provides the latest job vacancies in Kenya 2021. Signup and get
 updates on ngo jobs, government jobs and part time jobs in Kenya. Visit our career page and courses to enhance your
 career
 {% endblock %}
 
 {% block ogdesc %}
-Jobs in Kenya 2021 - Jobs in Kenya 2021 - JobsearchKE provides the latest job vaccancies in Kenya 2021. Signup and get
+Jobs in Kenya 2021 - Jobs in Kenya 2021 - JobsearchKE provides the latest job vacancies in Kenya 2021. Signup and get
 updates on ngo jobs, government jobs and part time jobs in Kenya. Visit our career page and courses to enhance your
 career
 {% endblock %}
 
-{% block ogtitle %}Jobs in Kenya 2021 - Job Vaccancies in Kenya 2021 | JobsearchKE{% endblock %}
+{% block ogtitle %}Jobs in Kenya 2021 - Job Vacancies in Kenya 2021 | JobsearchKE{% endblock %}
 
 {% block ogurl %}
 https://jobsearchke.com
 {% endblock %}
 {% block ogimg %}https://jobsearchke.com{% static 'jobs/img/lala.png' %}{% endblock %}
 
-{% block title%}Jobs in Kenya 2021 - Job Vaccancies in Kenya 2021 | JobsearchKE{% endblock %}
+{% block title%}Jobs in Kenya 2021 - Job Vacancies in Kenya 2021 | JobsearchKE{% endblock %}
 
 {% block content %}
 {% include "jobs/navbar.html" %}
 
 <section class="find-job section">
     <div class="container">
-        <h2 class="section-title">Latest Jobs in Kenya 2021</h2>
+        <h1 class="section-title mb-3">Jobs in Kenya 2021. Get the latest job vacancies in kenya</h1>
         <div class="row">
             <div class="col-md-9 col-sm-8">
                 {% for job in jobs %}
@@ -78,13 +78,13 @@ https://jobsearchke.com
                 </div>
                 {% endif %} -->
                 <div class="job-list">
-                    <div class="thumb">
+                    <!-- <div class="thumb">
                         <a href="{{job.get_absolute_url}}"><img src="{{job.company.logo.url}}" loading="lazy"
                                 alt="{{job.title}}"></a>
-                    </div>
+                    </div> -->
                     <div class="job-list-content">
-                        <h4><a href="{{job.get_absolute_url}}">{{job.get_job_title}}</a>
-                        </h4>
+                        <h2><a href="{{job.get_absolute_url}}">{{job.get_job_title}}</a>
+                        </h2>
                         <p>{{job.company.description}}
                         </p>
                         <div class="job-tag">
