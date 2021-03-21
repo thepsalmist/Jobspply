@@ -5,12 +5,8 @@ import sys
 
 
 def main():
-<<<<<<< HEAD
     os.environ.setdefault("DJANGO_SETTINGS_MODULE",
                           "jobspply.settings.production")
-=======
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "jobspply.settings.production")
->>>>>>> d9bbf9489d0b323a07b1288ace27b6b431f5661c
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
