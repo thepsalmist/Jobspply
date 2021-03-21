@@ -11,7 +11,7 @@ class LatestJobsFeed(Feed):
         return Job.objects.all()[:25]
 
     def item_title(self, item):
-        return item.title
+        return item.get_job_title()
 
     def item_description(self, item):
         return item.description

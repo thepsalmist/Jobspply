@@ -24,7 +24,7 @@ class Command(BaseCommand):
         jobs = Job.objects.filter(publish__gte=one_hour_ago)
 
         for job in jobs:
-            job_title = job.title
+            job_title = job.get_job_title()
             job_description = job.description
             job_slug = job.slug
             job_url = "https://jobsearchke.com/job/" + job_slug
