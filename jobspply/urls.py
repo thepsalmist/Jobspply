@@ -24,7 +24,6 @@ from users import views as user_views
 
 sitemaps = {
     "static": StaticSitemap,
-    "jobs": JobSitemap,
 }
 
 urlpatterns = [
