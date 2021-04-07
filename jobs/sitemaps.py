@@ -21,6 +21,7 @@ class StaticSitemap(Sitemap):
             "resume:home",
             "courses:home",
             "jobs:categories",
+            "jobs:companies",
             "jobs:about",
             "jobs:contact",
         ]
