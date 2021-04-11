@@ -23,9 +23,9 @@ from jobs.sitemaps import JobSitemap, StaticSitemap, BlogSitemap
 from users import views as user_views
 
 sitemaps = {
-    "blog": BlogSitemap,
-    "jobs": JobSitemap,
     "static": StaticSitemap,
+    "jobs": JobSitemap,
+    "blog": BlogSitemap,
 }
 
 urlpatterns = [

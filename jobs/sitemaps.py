@@ -16,7 +16,7 @@ class JobSitemap(Sitemap):
         return obj.publish
 
     def location(self, obj):
-        return obj.get_absolute_url
+        return obj.get_absolute_url()
 
 
 class BlogSitemap(Sitemap):
@@ -31,7 +31,7 @@ class BlogSitemap(Sitemap):
         return obj.updated
 
     def location(self, obj):
-        return obj.get_absolute_url
+        return obj.get_absolute_url()
 
 
 class StaticSitemap(Sitemap):
