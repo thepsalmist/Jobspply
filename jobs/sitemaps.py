@@ -28,7 +28,7 @@ class BlogSitemap(Sitemap):
         return Post.objects.all()
 
     def lastmod(self, obj):
-        return obj.updated
+        return obj.publish
 
     def location(self, obj):
         return obj.get_absolute_url()
