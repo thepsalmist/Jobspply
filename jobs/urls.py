@@ -21,4 +21,5 @@ urlpatterns = [
     path("category/<slug:slug>/", views.jobs_by_category, name="jobs_by_category"),
     path("ads.txt", RedirectView.as_view(url=staticfiles_storage.url("ads.txt"))),
     path("feed/", LatestJobsFeed(), name="job_feed"),
+    path("robots.txt/", views.robots_txt, name="robots_txt"),
 ]
