@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Count, Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib import messages
+from django.http import HttpResponse
+from django.views.decorators.http import require_GET
 from collections import Counter
 from .models import Job, Company, Category
 from career.models import Post
@@ -210,3 +212,20 @@ def privacy(request):
 
 def terms_of_service(request):
     return render(request, "jobs/terms_of_service.html", context={})
+
+
+@require_GET
+def robots_txt(request):
+    lines = [
+        "User-Agent: *",
+        "Disallow: /profile/",
+        "Disallow: /login/",
+        "Disallow: /logout/",
+        "Disallow: /register/",
+        "Disallow: /admin/",
+        "Disallow: /api/",
+        "Disallow: /api-auth/",
+        "Disallow: /password_reset/",
+        "Sitemap: https://jobsearchke.com/sitemap.xml",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
