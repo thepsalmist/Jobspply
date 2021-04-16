@@ -24,6 +24,7 @@ class CompanyAdmin(admin.ModelAdmin):
     list_filter = [
         "name",
     ]
+    search_fields = ["name"]
     prepopulated_fields = {"slug": ("name",)}
 
 
@@ -33,4 +34,5 @@ class CategoryAdmin(admin.ModelAdmin):
     list_filter = [
         "title",
     ]
+    search_fields = ["title"]
     prepopulated_fields = {"slug": ("title",)}

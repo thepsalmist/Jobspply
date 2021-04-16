@@ -184,6 +184,13 @@ def contact(request):
 
 def all_companies(request):
     companies = Company.objects.all()
+    
+    query = request.GET.get("q")
+    if query != "" and query is not None:
+        companies = companies.filter(
+            Q(name__icontains=query) | Q(slug__icontains=query)
+        )
+
     jobs = Job.objects.filter(status="published")
     context = {
         "companies": companies,
