@@ -145,7 +145,7 @@ def job_search(request):
             Q(title__icontains=query) | Q(description__icontains=query)
         )
     if choice != "" and choice is not None and choice != "All Categories":
-        queryset = queryset.filter(jobcategory=choice)
+        queryset = queryset.filter(jobcategory__title__contains=choice)
 
     paginator = Paginator(queryset, 6)
     page = request.GET.get("page")
