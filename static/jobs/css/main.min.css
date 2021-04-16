@@ -167,7 +167,7 @@ a:focus {
   padding: 60px 0;
 }
 .section-title {
-  font-size: 36px;
+  font-size: 30px;
   padding: 0 0 30px;
   font-weight: 900;
 }
@@ -473,7 +473,7 @@ a:focus {
   padding-bottom: 10px;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #fff;
+  color: #000;
   display: block;
   font-size: 15px;
   border-radius: 4px;
@@ -795,17 +795,17 @@ nav#menu span.fa.fa-bars:hover {
 }
 .search-container h1 {
   font-weight: 900;
-  font-size: 50px;
+  font-size: 40px;
   letter-spacing: 1px;
   line-height: 30px;
 }
 .search-container .content {
-  background: rgba(255, 255, 255, 0.1);
+  background: #444;
   padding: 10px;
   margin-bottom: 30px;
 }
 .popular-jobs a {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color:#67900b;
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 5px 10px;
   color: #fff;
@@ -862,9 +862,9 @@ nav#menu span.fa.fa-bars:hover {
   padding: 40px 0;
 }
 #intro-bg {
-  background-color: #000;
+  background-color: #fff;
   background-size: cover;
-  color: #fff;
+  color: #444;
   position: relative;
   width: 100%;
   height: auto;
