@@ -43,8 +43,35 @@ Jobs in Kenya 2021 - Job Vacancies in Kenya 2021 | JobsearchKE
     </div>
 </div>
 
+<div class="search-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>More than 100 top companies hiring today</h2>
+                <div class="content">
+                    <form method="GET" action=".">
+                        <div class="row">
+                            <div class="col-md-11 col-sm-6">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="q" value="{{request.GET.q}}"
+                                        placeholder="Search by Company Name ">
+                                </div>
+                            </div>
+                            <div class="col-md-1 col-sm-6">
+                                <button type="submit" class="btn btn-search-icon"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+            <a href="https://kol.jumia.com/api/click/banner/fb9fd199-04bb-45d8-babf-59f27696ffce/ed8f2110-4a85-4e3f-91ff-f623131e5ae6"><img src="https://kol.jumia.com/banners/5BN5ReSftQkXz60tIrCZqcYTuxfr4vfHWYxr0fRX.png" alt="Everything on JUMIA"/></a>
+    </div>
+</div>
 
-<section class="section">
+<section class="section pt-30px">
     <div class="container">
         <h2 class="section-title">Jobs by Company</h2>
         <div class="row">
@@ -55,8 +82,12 @@ Jobs in Kenya 2021 - Job Vacancies in Kenya 2021 | JobsearchKE
                         <div>
                             <img src="{{company.logo.url}}" alt="JobsearchKE Jobs">
                         </div>
-                        <h3>{{ company.name | capfirst}}</h3>
+                        <div>
+                            <h3>{{ company.name | capfirst}}</h3>    
+                        </div>
+                       <div>
                         <p>{{company.job_set.count}} jobs</p>
+                       </div>
                     </a>
                 </div>
                 {% endfor %}

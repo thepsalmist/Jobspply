@@ -51,6 +51,7 @@ class Category(models.Model):
         ("hr & admin assistant", "HR/Admin Assistant"),
         ("customer service", "Customer Service"),
         ("engineering", "Engineering"),
+       
     )
     title = models.CharField(choices=CATEGORY_CHOICES, max_length=256)
     slug = models.SlugField(max_length=256, blank=True)
@@ -147,7 +148,7 @@ class Job(models.Model):
 
 def slug_save(sender, instance, *args, **kwargs):
     if not instance.slug:
-        instance.slug = slug_generator(instance, instance.title, instance.slug)
+        instance.slug = slug_generator(instance, instance.get_job_title(), instance.slug)
 
 
 pre_save.connect(slug_save, sender=Job)
