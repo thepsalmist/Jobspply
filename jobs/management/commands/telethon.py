@@ -17,6 +17,9 @@ class Command(BaseCommand):
         api_hash = config('api_hash')
 
         client = TelegramClient('server',api_id,api_hash)
+
+        now = datetime.now(tz=pytz.UTC)
+        three_hours_ago = now - timedelta(hours=3)
     
         @sync_to_async
         def get_jobs():
@@ -25,10 +28,6 @@ class Command(BaseCommand):
 
 
         async def main():
-            now = datetime.now(tz=pytz.UTC)
-            three_hours_ago = now - timedelta(hours=3)
-            
-
             for job in await get_jobs():
                 job_title = job.get_job_title()
                 job_description = job.description
