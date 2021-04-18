@@ -2,6 +2,7 @@ import pytz
 import time
 from telethon import TelegramClient,events, sync
 from django.core.management.base import BaseCommand
+from asgiref.sync import sync_to_async
 from decouple import config
 from datetime import datetime
 from datetime import timedelta
@@ -16,14 +17,19 @@ class Command(BaseCommand):
         api_hash = config('api_hash')
 
         client = TelegramClient('server',api_id,api_hash)
+    
+        @sync_to_async
+        def get_jobs():
+            jobs = Job.objects.filter(publish__gte=three_hours_ago)
+            return jobs
 
 
         async def main():
             now = datetime.now(tz=pytz.UTC)
             three_hours_ago = now - timedelta(hours=3)
-            jobs = Job.objects.filter(publish__gte=three_hours_ago)
+            
 
-            for job in jobs:
+            for job in await get_jobs():
                 job_title = job.get_job_title()
                 job_description = job.description
                 job_slug = job.slug
