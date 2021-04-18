@@ -5,7 +5,7 @@ from django.core.management.base import BaseCommand
 from decouple import config
 from datetime import datetime
 from datetime import timedelta
-
+from jobs.models import Job
 
 class Command(BaseCommand):
     help = "Post Job updates to Telegram"
