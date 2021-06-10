@@ -1,11 +1,12 @@
 #!/home/thepsalmist/jobsearch/my_env/bin/python3
-
-# -*- coding: utf-8 -*-
+# EASY-INSTALL-ENTRY-SCRIPT: 'black==20.8b1','console_scripts','blackd'
+__requires__ = 'black==20.8b1'
 import re
 import sys
-
-from blackd import patched_main
+from pkg_resources import load_entry_point
 
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
-    sys.exit(patched_main())
+    sys.exit(
+        load_entry_point('black==20.8b1', 'console_scripts', 'blackd')()
+    )

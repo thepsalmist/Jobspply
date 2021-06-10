@@ -6,14 +6,12 @@ from asgiref.sync import sync_to_async
 from decouple import config
 from datetime import datetime
 from datetime import timedelta
-<<<<<<< HEAD
 from jobs.models import Job
-=======
+
 
 import telethon
 from jobs.telethon import main, client
 
->>>>>>> e6d04ef86717808ce65e72e1e7b4610b1dddffa2
 
 class Command(BaseCommand):
     help = "Post Job updates to Telegram"
@@ -50,12 +48,3 @@ class Command(BaseCommand):
         #         # ...to some chat ID
         #         await client.send_message(-1001294903048, job)
         #         #await client.send_message(-1001294903048, job)
-
-<<<<<<< HEAD
-                time.sleep(60)
-            
-        with client:
-            client.loop.run_until_complete(main())
-=======
-        #         time.sleep(60)
->>>>>>> e6d04ef86717808ce65e72e1e7b4610b1dddffa2
