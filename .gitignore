@@ -128,3 +128,5 @@ dmypy.json
 media
 
 server.session
+
+.vscode/
