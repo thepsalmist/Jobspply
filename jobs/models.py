@@ -51,7 +51,6 @@ class Category(models.Model):
         ("hr & admin assistant", "HR/Admin Assistant"),
         ("customer service", "Customer Service"),
         ("engineering", "Engineering"),
-       
     )
     title = models.CharField(choices=CATEGORY_CHOICES, max_length=256)
     slug = models.SlugField(max_length=256, blank=True)
@@ -91,8 +90,7 @@ class Job(models.Model):
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=200, blank=True)
     description = models.TextField()
-    jobcategory = models.ForeignKey(
-        Category, on_delete=models.CASCADE, null=True)
+    jobcategory = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     location = models.CharField(
         max_length=100, choices=LOCATION_CHOICES, default="nairobi", null=True
     )
@@ -128,6 +126,10 @@ class Job(models.Model):
         res = self.company.name + " Jobs -" + " " + self.title
         return res
 
+    def get_job_url(self):
+        job_url = "https://jobsearchke.com/job/" + self.slug
+        return job_url
+
     @property
     def structured_data(self):
         url = SITE_URL + self.get_absolute_url()
@@ -148,7 +150,9 @@ class Job(models.Model):
 
 def slug_save(sender, instance, *args, **kwargs):
     if not instance.slug:
-        instance.slug = slug_generator(instance, instance.get_job_title(), instance.slug)
+        instance.slug = slug_generator(
+            instance, instance.get_job_title(), instance.slug
+        )
 
 
 pre_save.connect(slug_save, sender=Job)
