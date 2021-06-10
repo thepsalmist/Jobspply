@@ -16,15 +16,15 @@ api_hash = config("api_hash")
 client = TelegramClient("server", api_id, api_hash)
 
 now = datetime.now(tz=pytz.UTC)
-three_hours_ago = now - timedelta(hours=3)
+two_hours_ago = now - timedelta(hours=2)
 
 new_jobs = []
 
 
 @sync_to_async
 def get_jobs():
-    # jobs = Job.objects.filter(publish__gte=three_hours_ago)
-    jobs = Job.objects.all()
+    jobs = Job.objects.filter(publish__gte=two_hours_ago)
+    # jobs = Job.objects.all()
     for job in jobs:
         data = {
             "job_title": job.get_job_title(),
