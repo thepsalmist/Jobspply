@@ -6,6 +6,8 @@ from asgiref.sync import sync_to_async
 from decouple import config
 from datetime import datetime
 from datetime import timedelta
+from jobs.models import Job
+
 
 import telethon
 from jobs.telethon import main, client
@@ -46,5 +48,3 @@ class Command(BaseCommand):
         #         # ...to some chat ID
         #         await client.send_message(-1001294903048, job)
         #         #await client.send_message(-1001294903048, job)
-
-        #         time.sleep(60)

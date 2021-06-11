@@ -130,3 +130,4 @@ media
 server.session
 
 .vscode/
+my_env/
