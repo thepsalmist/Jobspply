@@ -27,8 +27,8 @@ time_list = [60, 120, 180]
 
 @sync_to_async
 def get_jobs():
-    # jobs = Job.objects.filter(publish__gte=two_hours_ago)
-    jobs = Job.objects.all()
+    jobs = Job.objects.filter(publish__gte=two_hours_ago)
+    # jobs = Job.objects.all()
     for job in jobs:
         data = {
             "job_title": job.get_job_title(),
