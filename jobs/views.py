@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Count, Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
@@ -184,7 +185,7 @@ def contact(request):
 
 def all_companies(request):
     companies = Company.objects.all()
-    
+
     query = request.GET.get("q")
     if query != "" and query is not None:
         companies = companies.filter(
@@ -219,6 +220,16 @@ def privacy(request):
 
 def terms_of_service(request):
     return render(request, "jobs/terms_of_service.html", context={})
+
+
+def error_404(request, exception=None):
+    context = {}
+    return render(request, "jobs/404.html", context={})
+
+
+def error_500(request, exception=None):
+    context = {}
+    return render(request, "jobs/500.html", context={})
 
 
 @require_GET

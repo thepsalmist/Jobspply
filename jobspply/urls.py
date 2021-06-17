@@ -16,17 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import handler404, handler500
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
 from jobs.sitemaps import JobSitemap, StaticSitemap, BlogSitemap
 from users import views as user_views
+from jobs import views as jobs_views
 
 sitemaps = {
     "static": StaticSitemap,
     "jobs": JobSitemap,
     "blog": BlogSitemap,
 }
+
+handler404 = jobs_views.error_404
+handler500 = jobs_views.error_500
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
