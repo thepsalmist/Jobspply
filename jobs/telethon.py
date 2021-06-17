@@ -1,5 +1,6 @@
 import pytz
 import time
+import random
 import asyncio
 from telethon import TelegramClient, events, sync
 from asgiref.sync import sync_to_async
@@ -19,12 +20,15 @@ now = datetime.now(tz=pytz.UTC)
 two_hours_ago = now - timedelta(hours=2)
 
 new_jobs = []
+dev_jobs = []
+
+time_list = [60, 120, 180]
 
 
 @sync_to_async
 def get_jobs():
-    jobs = Job.objects.filter(publish__gte=two_hours_ago)
-    # jobs = Job.objects.all()
+    # jobs = Job.objects.filter(publish__gte=two_hours_ago)
+    jobs = Job.objects.all()
     for job in jobs:
         data = {
             "job_title": job.get_job_title(),
@@ -32,28 +36,30 @@ def get_jobs():
             "job_slug": job.slug,
             "job_url": job.get_job_url(),
         }
-        new_jobs.append(data)
-    return new_jobs
+        if job.jobcategory.title == "software engineering":
+            dev_jobs.append(data)
+        else:
+            new_jobs.append(data)
+
+    return new_jobs, dev_jobs
 
 
 async def main():
-    jobs = await get_jobs()
-    for job in jobs:
+    new_jobs, dev_jobs = await get_jobs()
+    for job in new_jobs:
         new_job = job["job_title"] + " " + str(job["job_url"])
-
-        # for job in await get_jobs():
-        #     job_title = job.get_job_title()
-        #     job_description = job.description
-        #     job_slug = job.slug
-        #     job_url = "https://jobsearchke.com/job/" + job_slug
-
-        #     job = job_title + " " + str(job_url)
 
         # You can send messages to yourself...
         # await client.send_message('me', job)
 
         # ...to some chat ID
-        # await client.send_message(-1001294903048, new_job)
+
         await client.send_message(-1001319879826, new_job)
 
-        time.sleep(60)
+        time.sleep(random.choice(time_list))
+
+    for job in dev_jobs:
+        new_job = job["job_title"] + " " + str(job["job_url"])
+        await client.send_message(-1001214407183, new_job)
+
+        time.sleep(random.choice(time_list))
