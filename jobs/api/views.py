@@ -8,12 +8,12 @@ from .serializers import JobListSerializer, JobDetailSerializer
 from .pagination import JobPageNumberPagination
 
 
-class JobsListAPIView(generics.ListAPIView):
-    queryset = Job.objects.all()
+class JobsListSearchAPIView(generics.ListAPIView):
     serializer_class = JobListSerializer
     permission_classes = [
         IsAdminUser,
     ]
+    queryset = Job.objects.all()
     filter_backends = [filters.SearchFilter]
     search_fields = ["title", "description"]
     pagination_class = JobPageNumberPagination
