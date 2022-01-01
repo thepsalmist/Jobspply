@@ -1,3 +1,4 @@
+from datetime import timedelta
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
@@ -119,6 +120,10 @@ class Job(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        self.expiry = self.set_expiry_date()
+        super(Job, self).save(*args, **kwargs)
+
     def get_absolute_url(self):
         return reverse("jobs:job_detail", args=[self.slug])
 
@@ -129,6 +134,11 @@ class Job(models.Model):
     def get_job_url(self):
         job_url = "https://jobsearchke.com/job/" + self.slug
         return job_url
+
+    def set_expiry_date(self):
+        published_date = self.publish.date()
+        one_month = timedelta(days=30)
+        return published_date + one_month
 
     @property
     def structured_data(self):
