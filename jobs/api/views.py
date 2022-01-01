@@ -19,6 +19,14 @@ class JobsListSearchAPIView(generics.ListAPIView):
     pagination_class = JobPageNumberPagination
 
 
+class JobsListAPIView(generics.ListAPIView):
+    serializer_class = JobListSerializer
+    permission_classes = [
+        IsAdminUser,
+    ]
+    queryset = Job.objects.all()
+
+
 class JobsDetailAPIView(generics.RetrieveAPIView):
     queryset = Job.objects.all()
     serializer_class = JobDetailSerializer
