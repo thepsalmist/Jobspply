@@ -73,6 +73,7 @@ class Job(models.Model):
     STATUS_CHOICES = (
         ("draft", "Draft"),
         ("published", "Published"),
+        ("archived", "Archived"),
     )
     EMPLOYMENT_CHOICES = (
         ("contract", "Contract"),
