@@ -106,7 +106,7 @@ class Job(models.Model):
     # )
     publish = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
-    expiry = models.DateField(null=True)
+    expiry = models.DateField(null=True, blank=True)
     status = models.CharField(
         max_length=10, choices=STATUS_CHOICES, default="draft", null=True
     )
