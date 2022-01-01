@@ -184,7 +184,9 @@ def contact(request):
 
 
 def all_companies(request):
-    companies = Company.objects.all()
+    companies = Company.objects.annotate(company_jobs=Count("job")).order_by(
+        "-company_jobs"
+    )
 
     query = request.GET.get("q")
     if query != "" and query is not None:
@@ -192,10 +194,8 @@ def all_companies(request):
             Q(name__icontains=query) | Q(slug__icontains=query)
         )
 
-    jobs = Job.objects.filter(status="published")
     context = {
         "companies": companies,
-        "jobs": jobs,
     }
     return render(request, "jobs/companies.html", context)
 
