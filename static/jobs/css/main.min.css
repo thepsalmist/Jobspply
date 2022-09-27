@@ -805,7 +805,7 @@ nav#menu span.fa.fa-bars:hover {
   margin-bottom: 30px;
 }
 .popular-jobs a {
-  background-color:#67900b;
+  background-color: #67900b;
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 5px 10px;
   color: #fff;
@@ -1513,21 +1513,21 @@ label {
   float: right;
 }
 footer .block-title {
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 1px;
   font-weight: 900;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 footer .footer-Content {
-  background-color: #202020;
+  background-color: #fff;
   padding: 60px 0;
-  color: #fff;
+  color: #444;
 }
 .textwidget {
   font-size: 14px;
   font-weight: 300;
   line-height: 24px;
-  color: #fff;
+  color: #444;
 }
 footer .menu {
   padding-left: 0;
@@ -1536,7 +1536,7 @@ footer .menu li {
   padding-bottom: 10px;
 }
 footer .menu li a {
-  color: #fff;
+  color: #444;
   padding: 0;
 }
 footer .menu li a:hover {
@@ -1550,7 +1550,7 @@ footer .menu li a:hover {
   font-size: 12px;
   padding: 6px 12px;
   border: none;
-  background: #fff;
+  background: #444;
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -1614,16 +1614,16 @@ footer .menu li a:hover {
   overflow: hidden;
 }
 #copyright {
-  background-color: #202020;
-  border-top: 1px solid #393939;
+  background-color: #fff;
+  border-top: 1px solid #fff;
   padding: 20px 0 10px;
-  color: #fff;
+  color: #444;
 }
 #copyright p {
   line-height: 34px;
 }
 #copyright p a {
-  color: #fff;
+  color: #444;
 }
 #copyright p a:hover {
   color: #67900b;
