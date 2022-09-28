@@ -1,5 +1,5 @@
 appdirs==1.4.3
-asgiref==3.2.3
+asgiref
 attrs==19.3.0
 backcall==0.2.0
 beautifulsoup4==4.8.2
@@ -57,5 +57,5 @@ traitlets==4.3.3
 tweepy==3.10.0
 typed-ast==1.4.0
 typing-extensions==3.7.4.3
-urllib3==1.26.5
+urllib3
 wcwidth==0.2.5

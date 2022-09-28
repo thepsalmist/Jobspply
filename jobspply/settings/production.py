@@ -5,9 +5,9 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "178.62.70.232",
     "www.jobsearchke.com",
     "jobsearchke.com",
+    "139.162.214.213",
 ]
 
 # Database
