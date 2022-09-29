@@ -53,8 +53,12 @@ async def main():
         # await client.send_message('me', job)
 
         # ...to some chat ID
-
+        #amx_community
         await client.send_message(-1001319879826, new_job)
+        
+        #rolodex
+        await client.send_message( -1001221526011, new_job)
+       
 
         time.sleep(random.choice(time_list))
 

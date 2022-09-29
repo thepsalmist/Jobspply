@@ -131,3 +131,6 @@ server.session
 
 .vscode/
 my_env/
+resume/*
+
+server.session-journal
