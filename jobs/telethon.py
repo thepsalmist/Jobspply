@@ -7,12 +7,19 @@ from asgiref.sync import sync_to_async
 from decouple import config
 from datetime import datetime
 from datetime import timedelta
+from decouple import config
 from .models import Job
 
 
 # Creating a client
 api_id = config("api_id")
 api_hash = config("api_hash")
+
+#Telegram IDs
+amx_id = config("amx_id")
+rolodex_id = config("rolodex_id")
+eng_id = config("engineering_id")
+coding_id = config("coding_id")
 
 client = TelegramClient("server", api_id, api_hash)
 
@@ -21,6 +28,7 @@ two_hours_ago = now - timedelta(hours=2)
 
 new_jobs = []
 dev_jobs = []
+eng_jobs = []
 
 time_list = [60, 120, 180]
 
@@ -38,14 +46,16 @@ def get_jobs():
         }
         if job.jobcategory.title == "software engineering":
             dev_jobs.append(data)
+        elif job.jobcategory.title == "engineering":
+            eng_jobs.append(data)
         else:
             new_jobs.append(data)
 
-    return new_jobs, dev_jobs
+    return new_jobs,dev_jobs,eng_jobs
 
 
 async def main():
-    new_jobs, dev_jobs = await get_jobs()
+    new_jobs, dev_jobs,eng_jobs = await get_jobs()
     for job in new_jobs:
         new_job = job["job_title"] + " " + str(job["job_url"])
 
@@ -54,16 +64,21 @@ async def main():
 
         # ...to some chat ID
         #amx_community
-        await client.send_message(-1001319879826, new_job)
+        await client.send_message(amx_id, new_job)
         
         #rolodex
-        await client.send_message( -1001221526011, new_job)
+        await client.send_message(rolodex_id, new_job)
        
-
         time.sleep(random.choice(time_list))
 
     for job in dev_jobs:
         new_job = job["job_title"] + " " + str(job["job_url"])
-        await client.send_message(-1001214407183, new_job)
+        await client.send_message(coding_id, new_job)
+
+        time.sleep(random.choice(time_list))
+    
+    for job in eng_jobs:
+        new_job = job["job_title"] + " " + str(job["job_url"])
+        await client.send_message(eng_id, new_job)
 
         time.sleep(random.choice(time_list))
