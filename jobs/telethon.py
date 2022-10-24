@@ -74,11 +74,21 @@ async def main():
     for job in dev_jobs:
         new_job = job["job_title"] + " " + str(job["job_url"])
         await client.send_message(int(coding_id), new_job)
+        #amx_community
+        await client.send_message(int(amx_id), new_job)
+        
+        #rolodex
+        await client.send_message(int(rolodex_id), new_job)
 
         time.sleep(random.choice(time_list))
     
     for job in eng_jobs:
         new_job = job["job_title"] + " " + str(job["job_url"])
         await client.send_message(int(eng_id), new_job)
+        #amx_community
+        await client.send_message(int(amx_id), new_job)
+        
+        #rolodex
+        await client.send_message(int(rolodex_id), new_job)
 
         time.sleep(random.choice(time_list))
