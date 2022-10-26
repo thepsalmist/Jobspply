@@ -91,7 +91,7 @@ class Job(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=200, blank=True)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     jobcategory = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     location = models.CharField(
         max_length=100, choices=LOCATION_CHOICES, default="nairobi", null=True
@@ -123,6 +123,7 @@ class Job(models.Model):
 
     def save(self, *args, **kwargs):
         self.expiry = self.set_expiry_date()
+        self.description = self.set_description()
         super(Job, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
@@ -140,6 +141,10 @@ class Job(models.Model):
         published_date = self.publish.date()
         one_month = timedelta(days=30)
         return published_date + one_month
+    
+    def set_description(self):
+        description = f"{self.company.name} careers, {self.company.name} salaries. Job vacancies at {self.comoany.name} for {self.title} in Kenya. Apply today."
+        return description
 
     @property
     def structured_data(self):
