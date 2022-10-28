@@ -5,6 +5,10 @@
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {% endblock %}
 
+{% block canonical%}
+<link rel="canonical" href="{{job.get_job_url}}">
+{% endblock %}
+
 {% block meta %}{{job.description}} {% endblock %}
 
 {% block ogdesc %}
