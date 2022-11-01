@@ -4,13 +4,12 @@
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {% endblock %}
 
-{% block meta %} Find the latest {{category}} jobs in Kenya 2022. Signup and apply for the current {{category}} job vacancies
-in leading companies. Visit our career page and courses to enhance your career | JobsearchKE
+{% block meta %} Find the latest {{category}} jobs in Kenya 2022. Apply for the current {{category}} job vacancies
+and view salaries | JobsearchKE
 {% endblock %}
 
 {% block ogdesc %}
-Find the latest {{category}} jobs in Kenya 2022. Signup and apply for the current {{category}} job vacancies in leading
-companies. Visit our career page and courses to enhance your career | JobsearchKE
+Find the latest {{category}} jobs in Kenya 2022. Apply for the current {{category}} job vacancies and view salaries| JobsearchKE
 {% endblock %}
 
 {% block ogtitle %}
@@ -31,6 +30,7 @@ companies. Visit our career page and courses to enhance your career | JobsearchK
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb-wrapper">
+                    <h1 style="display: none;">Jobs in Kenya 2022, NGO Jobs in Kenya, Today Job Vacancies</h1>
                     <h2 class="product-title">Latest Jobs</h2>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="ti-home"></i> Home</a></li>
@@ -59,7 +59,7 @@ companies. Visit our career page and courses to enhance your career | JobsearchK
                 {% for job in jobs %}
                 <div class="job-list">
                     <div class="thumb">
-                        <a href="{{job.get_absolute_url}}"><img src="{{job.company.logo.url}}" alt=""></a>
+                        <a href="{{job.get_absolute_url}}"><img src="{{job.company.logo.url}}" alt="{{job.company.name}}"></a>
                     </div>
                     <div class="job-list-content">
                         <h4><a href="{{job.get_absolute_url}}">{{job.title}}</a></h4>

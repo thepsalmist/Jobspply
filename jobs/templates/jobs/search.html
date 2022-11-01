@@ -59,7 +59,7 @@ companies. Visit our career page and courses to enhance your career | JobsearchK
                 {% for query in queryset %}
                 <div class="job-list">
                     <div class="thumb">
-                        <a href="{{query.get_absolute_url}}"><img src="{{query.company.logo.url}}" alt=""></a>
+                        <a href="{{query.get_absolute_url}}"><img src="{{query.company.logo.url}}" alt="{{query.company.name}}"></a>
                     </div>
                     <div class="job-list-content">
                         <h4><a href="{{query.get_absolute_url}}">{{query.title}}</a></h4>

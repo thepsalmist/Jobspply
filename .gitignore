@@ -134,3 +134,5 @@ my_env/
 resume/*
 
 server.session-journal
+
+DOCS.md
