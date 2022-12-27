@@ -143,7 +143,7 @@ class Job(models.Model):
         return published_date + one_month
     
     def set_description(self):
-        description = f"{self.company.name} careers, {self.company.name} salaries. 2022 Job vacancies at {self.company.name} for {self.title} in Kenya. Apply today."
+        description = f"{self.company.name} careers, {self.company.name} salaries. 2023 Job vacancies at {self.company.name} for {self.title} in Kenya. Apply today."
         return description
 
     @property
