@@ -130,7 +130,7 @@ class Job(models.Model):
         return reverse("jobs:job_detail", args=[self.slug])
 
     def get_job_title(self):
-        res = f"{self.title} at - {self.company.name}"
+        res = f"{self.title} - {self.company.name}"
         return res
 
     def get_job_url(self):
