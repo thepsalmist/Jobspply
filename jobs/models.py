@@ -52,6 +52,12 @@ class Category(models.Model):
         ("hr & admin assistant", "HR/Admin Assistant"),
         ("customer service", "Customer Service"),
         ("engineering", "Engineering"),
+        ("project_management", "Project Management"),
+        ("general", "General"),
+        ("travels & tours", "Travels & Tours"),
+        ("product management", "Product Management"),
+        ("driving","Driving"),
+
     )
     title = models.CharField(choices=CATEGORY_CHOICES, max_length=256)
     slug = models.SlugField(max_length=256, blank=True)
