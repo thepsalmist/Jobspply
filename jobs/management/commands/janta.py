@@ -57,7 +57,12 @@ class Command(BaseCommand):
                         print(f"{job_title} added")
 
             csv_writer.writerow(
-                [job_title, date_posted, job_description, job_url,]
+                [
+                    job_title,
+                    date_posted,
+                    job_description,
+                    job_url,
+                ]
             )
         csv_file.close()
 

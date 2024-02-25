@@ -10,8 +10,8 @@ class Command(BaseCommand):
     help = "Scrapes MyJobMag "
 
     def handle(self, *args, **kwargs):
-       	twitter.post_tweets()
-	
+        twitter.post_tweets()
+
         # base_url = "https://www.myjobmag.co.ke/"
 
         # csv_file = open("kenya_jobs.csv", "w")

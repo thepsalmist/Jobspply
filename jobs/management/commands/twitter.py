@@ -15,17 +15,20 @@ def twitter_auth():
     access_token = config("TWITTER_ACCESS_TOKEN")
 
     client = tweepy.Client(
-        consumer_key=consumer_key, consumer_secret=consumer_secret,
-        access_token=access_token, access_token_secret=access_token_secret
+        consumer_key=consumer_key,
+        consumer_secret=consumer_secret,
+        access_token=access_token,
+        access_token_secret=access_token_secret,
     )
-    
+
     return client
+
 
 def post_tweets():
     client = twitter_auth()
     if not client:
         raise Exception("Twitter Authentication failed")
-    
+
     now = datetime.now(tz=pytz.UTC)
     three_hours_ago = now - timedelta(hours=3)
     jobs = Job.objects.filter(publish__gte=three_hours_ago)
@@ -34,13 +37,10 @@ def post_tweets():
         job_description = job.description
         job_slug = job.slug
         job_url = f"https://jobsearchke.com/job/{job_slug}"
-        
-        tweet_content = f"#IkoKaziKE Check out this job opportunity:\n {job_title}\n{job_url}\n{job_description}"
-        client.create_tweet(
-            text=tweet_content
-        )
-        time.sleep(60)
 
+        tweet_content = f"#IkoKaziKE Check out this job opportunity:\n {job_title}\n{job_url}\n{job_description}"
+        client.create_tweet(text=tweet_content)
+        time.sleep(60)
 
 
 # def get_trending():
