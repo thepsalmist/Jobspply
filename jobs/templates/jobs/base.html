@@ -37,7 +37,13 @@
 
     gtag('config', 'G-GD11ET0KJK');
     </script>
-    
+
+    <!-- Event snippet for Website traffic conversion page -->
+    <script>
+        gtag('event', 'conversion', {'send_to': 'AW-706350396/a-2ECM7n3fwBELya6NAC'});
+    </script>
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,10 +54,10 @@
     {% block canonical %} {% endblock %}
     <meta name="revisit-after" content="1">
     <meta name="refresh time" content="1">
-    <meta name="copyright" content="jobsearchke.com"> 
-    <meta name="author" content="JobsearchKE">  
-    <meta name="language" content="English"> 
-    
+    <meta name="copyright" content="jobsearchke.com">
+    <meta name="author" content="JobsearchKE">
+    <meta name="language" content="English">
+
 
     <meta property="og:title" content="{% block ogtitle%} {% endblock %}" />
     <meta property="og:type" content="website" />
@@ -64,7 +70,7 @@
     <meta name="twitter:site" content="@jobsearchke">
     <meta name="twitter:creator" content="@jobsearchke">
 
-   
+
 
 
     <link rel=" apple-touch-icon" sizes="180x180" href="{% static 'jobs/favicon_io/apple-touch-icon.png' %}">
@@ -138,9 +144,9 @@
     <script type="text/javascript" src="{% static 'jobs/js/bootstrap-select.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'jobs/js/form-validator.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'jobs/js/contact-form-script.js' %}"></script>
-    <!-- <script type="text/javascript" src="{% static 'jobs/js/jquery.themepunch.revolution.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'jobs/js/jquery.themepunch.tools.min.js' %}"></script> -->
+    {% block script %}
 
+    {% endblock %}
 </body>
 
 </html>
