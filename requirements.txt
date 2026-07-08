@@ -35,7 +35,7 @@ parso==0.8.1
 pathspec==0.6.0
 pexpect==4.8.0
 pickleshare==0.7.5
-pillow==10.2.0
+pillow==10.3.0
 prompt-toolkit==3.0.13
 psycopg2-binary==2.8.4
 ptyprocess==0.7.0
